@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PID=$(pgrep solaar)
-
-if [ -z $PID ]; then
-    sudo solaar &
+if [[ $(which solaar) ]]; then
+    if [[ -z $(pgrep solaar) ]]; then
+        sudo solaar &
+    fi
 fi

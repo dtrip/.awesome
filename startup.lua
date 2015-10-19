@@ -3,7 +3,7 @@ awful.util.spawn_with_shell("sh " .. CONFIG_PATH .. "/xcomp &")
 awful.util.spawn_with_shell("xfce4-power-manager --restart &")
 
 awful.util.spawn_with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
-awful.util.spawn_with_shell("light-locker &")
+awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/lightlocker.bash &")
 
 -- sets network monitor applet in taskbar
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &")

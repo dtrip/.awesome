@@ -72,7 +72,50 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- Brightness
+    awful.key({ modkey, "Shift"      }, "p",
+        function ()
+            awful.util.spawn("xbacklight -dec 5") 
+        end),
+
+    awful.key({ modkey, "Shift"      }, "o",
+        function ()
+            awful.util.spawn("xbacklight -inc 5")
+        end),
+
+    awful.key({ modkey, "Control" }, "l",
+        function ()
+            awful.util.spawn("xscreensaver-command -lock")
+        end),
+
+    -- awful.key({ }, "F10", function() toggle_conky() end),
+    awful.key({ }, "XF86AudioRaiseVolume",
+        function ()
+            awful.util.spawn("amixer -c 1 set Master 5%+", false)
+        end),
+
+    awful.key({ }, "XF86AudioLowerVolume",
+        function ()
+            awful.util.spawn("amixer -c 1 set Master 5%-", false)
+        end),
+    awful.key({ }, "XF86AudioMute",
+        function ()
+            awful.util.spawn("amixer -c 1 set Master toggle", false)
+        end),
+
+    -- executes script to enable only primary monitor
+    awful.key({ modkey, "Shift" }, "Down",
+        function ()
+            awful.util.spawn_with_shell("~/.ubuntu/scripts/ext_monitor_disconnect &", false)
+        end),
+    -- executes script to enable secondary external monitor (in this case HDMI1)
+    awful.key({ modkey, "Shift" }, "Up",
+        function ()
+            awful.util.spawn_with_shell("~/.ubuntu/scripts/ext_monitor_connect &", false)
+        end)
+
 )
 
 clientkeys = awful.util.table.join(

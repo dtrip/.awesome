@@ -11,6 +11,8 @@ beautiful = require("beautiful")
 naughty = require("naughty")
 menubar = require("menubar")
 
+radical = require("radical")
+
 -- {{{ Error handling
 require("errors")
 -- {{{ Variable definitions
@@ -37,6 +39,8 @@ modkey = "Mod4"
 
 
 require("layouts")
+
+require("java")
 
 -- {{{ Helper functions
 require("helpers")

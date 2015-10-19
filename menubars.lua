@@ -1,16 +1,32 @@
 
 -- Create a laucher widget and a main menu
+
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+   { "Manual", terminal .. " -e man awesome" },
+   { "Edit Config", editor_cmd .. " " .. awesome.conffile },
+   { "Reload Awesome", awesome.restart },
+   { "Log Out", awesome.quit },
+   { "", nil },
+   { "Restart Computer", restart_cmd },
+   { "Shutdown Computer", shutdown_cmd }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+mymainmenu = awful.menu({ items = {
+                                    { "Firefox", firefox, beautiful.firefox },
+                                    { "Chrome", chrome, beautiful.www_icon },
+                                    { "Incognito Chrome", ichrome, beautiful.www_icon },
+                                    { "Burp Suite", burp, beautiful.burp_icon },
+                                    { "Terminal", terminal, beautiful.term_icon },
+                                    { "Keyboard", "onboard", beautiful.keyboard },
+                                    { "Files", fileman, beautiful.files },
+                                    { "ReCalibrate Touch", "xinput_calibrator", beautiful.touchcali },
+                                    -- { "Terminology", terminology, beautiful.term_icon },
+                                    -- { "Main Menu", debian.menu.Debian_menu.Debian, beautiful.debian },
+                                    { "Awesome", myawesomemenu, beautiful.awesome_lg_icon }
                                   }
                         })
+
+
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })

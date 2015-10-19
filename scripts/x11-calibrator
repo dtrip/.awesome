@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PID=$(pidof x11-touchscreen-calibrator)
-
-if [ -z $PID ]; then
-    x11-touchscreen-calibrator -d;
+if [[ $(which x11-touchscreen-calibrator) ]]; then
+    if [[ -z $(pidof x11-touchscreen-calibrator) ]]; then
+        x11-touchscreen-calibrator -d;
+    fi
 fi
