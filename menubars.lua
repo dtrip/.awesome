@@ -1,5 +1,6 @@
 
 -- Create a laucher widget and a main menu
+require("arrows")
 
 myawesomemenu = {
    { "Manual", terminal .. " -e man awesome" },
@@ -30,6 +31,20 @@ mymainmenu = awful.menu({ items = {
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
+
+-- local m = radical.context{}
+-- m:add_item {
+--     text="screen 1", 
+--     item_style = radical.item.style.arrow_prefix,
+--     icon = "/home/dtrip/.config/awesome/icons/burp.png",
+--     tooltip = "Application Menu"
+-- }
+--
+-- local mytextbox = wibox.widget.textbox()
+-- mytextbox:set_menu(m,3)
+--
+-- m:add_key_binding({"Mod4"}, ",")
+
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -100,7 +115,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = '24', screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -112,8 +127,29 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     right_layout:add(mykeyboardlayout)
 
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(mytextclock)
+    -- if s == 1 then right_layout:add(wibox.widget.systray()) end
+    -- right_layout:add(mytextclock)
+
+    
+    if s == 1 then
+        right_layout:add(arrl)
+        right_layout:add(spacer)
+        right_layout:add(wibox.widget.systray())
+        right_layout:add(spacer)
+    end
+
+    right_layout:add(arr8)
+    -- right_layout:add(arr7)
+    right_layout:add(arr6)
+    right_layout:add(arr5)
+    right_layout:add(arr4)
+    right_layout:add(arr3)
+    right_layout:add(neticon)
+    right_layout:add(wifiwidget)
+
+    right_layout:add(arr2)
+    right_layout:add(datewidget)
+    right_layout:add(arr1)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)

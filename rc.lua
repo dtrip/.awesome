@@ -10,6 +10,7 @@ beautiful = require("beautiful")
 -- Notification library
 naughty = require("naughty")
 menubar = require("menubar")
+vicious = require("vicious")
 
 radical = require("radical")
 tyrannical = require("tyrannical")
@@ -30,6 +31,9 @@ require("startup")
 -- beautiful.init("@AWESOME_THEMES_PATH@/powerarrows/theme.lua")
 beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
 
+spacer = wibox.widget.textbox()
+spacer:set_text(' ')
+
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "vim"
@@ -45,7 +49,9 @@ modkey = "Mod4"
 
 require("layouts")
 
+require("calendar")
 require("java")
+require("net")
 
 -- {{{ Helper functions
 require("helpers")

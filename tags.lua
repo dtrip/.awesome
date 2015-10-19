@@ -14,7 +14,9 @@ tyrannical.tags = {
         name = "Term",  -- tag name
         init = true,    -- load tag on startup
         exclusive = true, -- refuse other types of clients
-        screen  = screen.count()>1 and 2 or 1,-- Setup on screen 2 if there is more than 1 screen, else on screen 1
+        icon = CONFIG_PATH .. "/icons/term.png",
+        -- screen  = screen.count()>1 and 1 o 1,-- Setup on screen 2 if there is more than 1 screen, else on screen 1
+        screen = 1,
         layout = awful.layout.suit.max, -- layout style to use
         -- instance = {"dev", "ops"}, -- accepts the following instances; takes precedence over 'class'
         class = { 'Terminator', 'luakit' } -- accepts the folloing class
@@ -22,17 +24,20 @@ tyrannical.tags = {
     {
         name = "Burp",
         init = true,
-        exclusive = true,
+        -- exclusive = true,
         icon = CONFIG_PATH .. "/icons/burp.png",
         -- icon = "/home/dtrip/.config/awesome/icons/burp.png",
-        screen  = screen.count()>1 and 2 or 1,-- Setup on screen 2 if there is more than 1 screen, else on screen 1
-        layout = awful.layout.suit.max,
+        screen = 1,
+        -- screen  = screen.count()>1 and 2 or 1,-- Setup on screen 2 if there is more than 1 screen, else on screen 1
+        layout = awful.layout.suit.floating,
         class = { "sun-awt-X11-XDialogPeer", "sun-awt-X11-XFramePeer", "burp-StartBurp" }
     },
     {
         name = "SQL",
         init = true,
-        screen  = screen.count()>1 and 2 or 1,
+        -- screen  = screen.count()>1 and 2 or 1,
+        screen = 1,
+        icon = CONFIG_PATH .. "/icons/sql.png",
         layout = awful.layout.suit.max,
         class = { "sqlitestudio" },
         exclusive = true
@@ -40,7 +45,9 @@ tyrannical.tags = {
     {
         name = "Gimp",
         init = true,
-        screen  = screen.count()>1 and 2 or 1,
+        -- screen  = screen.count()>1 and 2 or 1,
+        screen = 1,
+        icon = CONFIG_PATH .. "/icons/gimp.png",
         layout = awful.layout.suit.max,
         exclusive = true,
         class = { "Gimp" }
@@ -48,7 +55,8 @@ tyrannical.tags = {
     {
         name = "Files",
         init = true,
-        screen  = screen.count()>1 and 2 or 1,
+        -- screen  = screen.count()>1 and 2 or 1,
+        screen = 1,
         layout = awful.layout.suit.max,
         exclusive = true,
         class = { "pcmanfm" }
@@ -66,6 +74,8 @@ tyrannical.properties.intrusive = { "pinentry", "xcalc", "kcalc", "Gnome-calcula
 
 -- Clients by class ignoring tile layout
 tyrannical.properties.floating = { "Lxappearance", "Gnome-calculator" }
+
+tyrannical.properties.fullscreen = { "sun-awt-X11-XDialogPeer", "sun-awt-X11-XFramePeer", "burp-StartBurp" }
 
 -- Make the matching clients (by classes) on top of the default layout
 tyrannical.properties.ontop = {  }
