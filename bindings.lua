@@ -13,10 +13,23 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
-    awful.key({ modkey,           }, "j",
+    awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
         end),
+
+    awful.key({modkey, "Shift"}, "m",
+        function()
+            awful.util.spawn_with_shell(CONFIG_PATH .. "/scripts/trackpad-toggle.sh &", false)
+            naughty.notify({
+                title = "Trackpad",
+                text = "Trackpad has been toggled",
+                position = top_right,
+                timeout = 2,
+                ontop = true
+            })
+        end),
+
     awful.key({ modkey,           }, "k",
         function ()
             awful.client.focus.byidx(-1)
@@ -29,7 +42,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.history.previous()
             if client.focus then

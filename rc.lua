@@ -12,12 +12,17 @@ naughty = require("naughty")
 menubar = require("menubar")
 
 radical = require("radical")
+tyrannical = require("tyrannical")
 
 -- {{{ Error handling
 require("errors")
 -- {{{ Variable definitions
 
-CONFIG_PATH = "~/.config/awesome"
+CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
+-- _G.CONFIG_PATH = awful.util.geticonpath('rc.lua', {'lua'}, { "~/.config/awesome"})
+-- -- naughty.notify({ text = CONFIG_PATH })
+
+-- naughty.notify({ TEXT="CTest" })
 
 require("startup")
 

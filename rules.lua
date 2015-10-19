@@ -15,19 +15,20 @@ awful.rules.rules = {
     { rule = { class = "pinentry" },
       properties = { floating = true } },
 
-    { rule = { class = "Gimp" },
-      properties = { tag = tags[1][4], floating = true } },
-    -- tags[screen #][tag #] 
-    { rule_any = { class = { "sun-awt-X11-XDialogPeer", "sun-awt-X11-XFramePeer", "burp-StartBurp"} },
-      properties = { tag = tags[1][2], floating = false } },
-    { rule = { class = "sqlitestudio" },
-      properties = { tag = tags[1][3], floating = false } },
-    { rule = { class = "Firefox" },
-      properties = { tag = tags[1][1], floating = false } },
-    { rule = { class = "Chromium-browser" },
-      properties = { tag = tags[1][1], floating = false } },
-    { rule_any = { class = { 'pcmanfm', 'Pcmanfm' } },
-      properties = { tag = tags[1][5], floating = false } },
+    -- Currently using Tryannical tags instead of built in tags
+    -- { rule = { class = "Gimp" },
+    --   properties = { tag = tags[1][4], floating = true } },
+    -- -- tags[screen #][tag #] 
+    -- { rule_any = { class = { "sun-awt-X11-XDialogPeer", "sun-awt-X11-XFramePeer", "burp-StartBurp"} },
+    --   properties = { tag = tags[1][2], floating = false } },
+    -- { rule = { class = "sqlitestudio" },
+    --   properties = { tag = tags[1][3], floating = false } },
+    -- { rule = { class = "Firefox" },
+    --   properties = { tag = tags[1][1], floating = false } },
+    -- { rule = { class = "Chromium-browser" },
+    --   properties = { tag = tags[1][1], floating = false } },
+    -- { rule_any = { class = { 'pcmanfm', 'Pcmanfm' } },
+    --   properties = { tag = tags[1][5], floating = false } },
 }
 -- }}}
 

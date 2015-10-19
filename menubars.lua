@@ -7,18 +7,18 @@ myawesomemenu = {
    { "Reload Awesome", awesome.restart },
    { "Log Out", awesome.quit },
    { "", nil },
-   { "Restart Computer", restart_cmd },
-   { "Shutdown Computer", shutdown_cmd }
+   { "Restart Computer", "shutdown -r now" },
+   { "Shutdown Computer", "shutdown -h now" }
 }
 
 mymainmenu = awful.menu({ items = {
-                                    { "Firefox", firefox, beautiful.firefox },
-                                    { "Chrome", chrome, beautiful.www_icon },
-                                    { "Incognito Chrome", ichrome, beautiful.www_icon },
-                                    { "Burp Suite", burp, beautiful.burp_icon },
+                                    { "Firefox", "firefox", beautiful.firefox },
+                                    { "Chrome", "chromium-browser", beautiful.www_icon },
+                                    { "Incognito Chrome", "chromium-browser --incognito", beautiful.www_icon },
+                                    { "Burp Suite", "burpsuite", beautiful.burp_icon },
                                     { "Terminal", terminal, beautiful.term_icon },
                                     { "Keyboard", "onboard", beautiful.keyboard },
-                                    { "Files", fileman, beautiful.files },
+                                    { "Files", "pcmanfm", beautiful.files },
                                     { "ReCalibrate Touch", "xinput_calibrator", beautiful.touchcali },
                                     -- { "Terminology", terminology, beautiful.term_icon },
                                     -- { "Main Menu", debian.menu.Debian_menu.Debian, beautiful.debian },

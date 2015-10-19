@@ -4,3 +4,9 @@
 [submodule "blingbling"]
 	path = blingbling
 	url = git://github.com/cedlemo/blingbling.git
+[submodule "awesome-shifty"]
+	path = awesome-shifty
+	url = git://github.com/cdump/awesome-shifty
+[submodule "tyrannical"]
+	path = tyrannical
+	url = https://github.com/Elv13/tyrannical.git
