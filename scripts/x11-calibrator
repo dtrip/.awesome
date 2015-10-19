@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PID=$(pidof x11-touchscreen-calibrator)
+
+if [ -z $PID ]; then
+    x11-touchscreen-calibrator -d;
+fi

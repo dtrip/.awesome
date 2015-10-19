@@ -1,0 +1,11 @@
+#!/bin/sh
+#sets wallpaper
+
+killall mplayer > /dev/null
+
+XFLAGS="-ni -fs -ov -nf -b -g 1920x1080+-960+0"
+# XFLAGS="-ni -fs -nf -ov"
+MFLAGS="-wid WID -quiet -loop 0 -volume 0 -geometry 0:0 -noconsolecontrols"
+
+# xwinwrap $XFLAGS -- mplayer $MFLAGS ~/Downloads/space.mp4 2>&1 /dev/null &
+xwinwrap $XFLAGS -- mplayer $MFLAGS ~/spacehud2.mp4 > /dev/null &

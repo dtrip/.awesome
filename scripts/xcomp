@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# Description: Starts xcompmgr should it not be running
+
+if [ -z $(pidof xcompmgr) ]; then
+    xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 > /dev/null &
+fi

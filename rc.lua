@@ -13,11 +13,15 @@ menubar = require("menubar")
 
 -- {{{ Error handling
 require("errors")
-
 -- {{{ Variable definitions
+
+CONFIG_PATH = "~/.config/awesome"
+
+require("startup")
+
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init("@AWESOME_THEMES_PATH@/default/theme.lua")
-beautiful.init("~/.config/awesome/themes/powerarrows/theme.lua")
+-- beautiful.init("@AWESOME_THEMES_PATH@/powerarrows/theme.lua")
+beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
