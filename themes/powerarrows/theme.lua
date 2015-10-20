@@ -64,7 +64,7 @@ theme.wallpaper2    = themedir .. "/jumpgr.png"
 
 -- theme.font                          = "Terminus 9"
 -- theme.font                          = "Oxygen-Sans Sans-Book 7"
-theme.font                          = "Panton 11"
+theme.font                          = "Panton 12"
 theme.fg_normal                     = "#e8e8e8"
 theme.fg_focus                      = "#F0DFAF"
 theme.fg_urgent                     = "#CC9393"
@@ -87,6 +87,7 @@ theme.notify_border                 = theme.border_focus
 theme.awful_widget_height           = 15
 theme.awful_widget_margin_top       = 0
 theme.mouse_finder_color            = "#CC9393"
+theme.bar_height                    = 18
 theme.menu_height                   = "30"
 theme.menu_width                    = "200"
 

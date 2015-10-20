@@ -13,6 +13,18 @@ menubar = require("menubar")
 vicious = require("vicious")
 
 radical = require("radical")
+-- require("init")
+
+-- radical      = require( "radical"                    )
+-- rad_task     = require( "radical.impl.tasklist"      )
+-- rad_taglist  = require( "radical.impl.taglist"       )
+-- alttab       = require( "radical.impl.alttab"        )
+-- rad_client   = require( "radical.impl.common.client" )
+-- rad_tag      = require( "radical.impl.common.tag"    )
+
+
+
+
 tyrannical = require("tyrannical")
 
 -- {{{ Error handling

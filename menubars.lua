@@ -1,6 +1,7 @@
 
 -- Create a laucher widget and a main menu
 require("arrows")
+-- require("rmenu")
 
 myawesomemenu = {
    { "Manual", terminal .. " -e man awesome" },
@@ -62,6 +63,7 @@ mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
+statusBars = {}
 mytaglist.buttons = awful.util.table.join(
                     awful.button({ }, 1, awful.tag.viewonly),
                     awful.button({ modkey }, 1, awful.client.movetotag),
@@ -117,6 +119,10 @@ for s = 1, screen.count() do
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", height = '24', screen = s })
 
+    -- statusBars[s] = awful.wibox({ position = "bottom", screen = s })
+    -- statusBars[s] = awful.wibox({ position = "bottom", ontop=false, screen = s, height="18" })
+
+
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mylauncher)
@@ -159,5 +165,23 @@ for s = 1, screen.count() do
     layout:set_right(right_layout)
 
     mywibox[s]:set_widget(layout)
+    
+    -- statusBars[s]:set_widget(bar_menu_w)
+    -- statusBars[s]:set_widget(rbox)
+ 
+    -- statusBars[s]:set_widgets {
+    --     { --Left
+    --         bar_menu_w     ,
+    --         {
+    --             mypromptbox[s] ,
+    --             layout = wibox.widget.background(nil,beautiful.fg_normal)
+    --         },
+    --         layout = wibox.layout.fixed.horizontal,
+    --     },
+    --     nil,
+    --     layout = wibox.layout.align.horizontal
+    -- }
+
+
 end
 
