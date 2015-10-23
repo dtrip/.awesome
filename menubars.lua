@@ -117,7 +117,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", height = '24', screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = '20', screen = s })
 
     -- statusBars[s] = awful.wibox({ position = "bottom", screen = s })
     -- statusBars[s] = awful.wibox({ position = "bottom", ontop=false, screen = s, height="18" })

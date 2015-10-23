@@ -13,6 +13,7 @@ datewidget_txt = wibox.widget.textbox()
 datewidget = wibox.widget.background()
 datewidget:set_widget(datewidget_txt)
 datewidget:set_bg(beautiful.arrow_bg_1)
+datewidget:set_fg(beautiful.datewidget_fg)
 vicious.register(datewidget_txt, vicious.widgets.date, "%b %d %r", 1)
 
 -- Create a textclock widget

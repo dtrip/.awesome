@@ -91,8 +91,8 @@ theme.bar_height                    = 18
 theme.menu_height                   = "30"
 theme.menu_width                    = "200"
 
-theme.arrow_bg_1                    = "#777e76"
-theme.arrow_bg_2                    = "#c2c2a4"
+theme.arrow_bg_1                    = "#d7ff80"
+theme.arrow_bg_2                    = "#061220"
 theme.arrow_bg_3                    = "#92b0a0"
 theme.arrow_bg_4                    = "#d0785d"
 theme.arrow_bg_5                    = "#4b3b51"
@@ -125,9 +125,9 @@ theme.arrl_ld                       = themedir .. "/icons/arrl_ld.png"
 theme.arrl_ld_sf                    = themedir .. "/icons/arrl_ld_sf.png"
 
 -- colored arrows & icons
-theme.arr1                          = themedir .. "/icons/powerarrow/arr1.png"
-theme.arr2                          = themedir .. "/icons/powerarrow/arr2.png"
-theme.arr3                          = themedir .. "/icons/powerarrow/arr3.png"
+theme.arr1                          = themedir .. "/icons/powerarrow/20/arr1.png"
+theme.arr2                          = themedir .. "/icons/powerarrow/20/arr2.png"
+theme.arr3                          = themedir .. "/icons/powerarrow/20/arr3.png"
 theme.arr4                          = themedir .. "/icons/powerarrow/arr4.png"
 theme.arr5                          = themedir .. "/icons/powerarrow/arr5.png"
 theme.arr6                          = themedir .. "/icons/powerarrow/arr6.png"
@@ -137,7 +137,7 @@ theme.arr9                          = themedir .. "/icons/powerarrow/arr9.png"
 
 theme.pa_cpu                        = themedir .. "/icons/powerarrow/cpu.png"
 -- theme.pa_net                        = themedir .. "/icons/powerarrow/net.png"
-theme.pa_net                        = themedir .. "/icons/wifi2.png"
+theme.pa_net                        = themedir .. "/icons/wifi20.png"
 
 theme.widget_ac                     = themedir .. "/icons/ac.png"
 theme.widget_battery                = themedir .. "/icons/battery.png"
@@ -194,7 +194,7 @@ theme.burp_icon                     = themedir .. "/icons/burp.png"
 
 theme.icon_theme_size = "64x64"
 
-theme.tasklist_disable_icon         = true
+theme.tasklist_disable_icon         = false
 theme.tasklist_floating             = ""
 theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
@@ -202,5 +202,8 @@ theme.tasklist_maximized_vertical   = ""
 -- theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 theme.awesome_icon = themedir .. "/icons/awesome16-arrow.png"
 theme.awesome_lg_icon = themedir .. "/icons/awesome16-2.png"
+
+
+theme.datewidget_fg                 = "#353638"
 
 return theme

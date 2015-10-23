@@ -28,15 +28,16 @@ xsetroot -cursor_name left_ptr
 
 # check if external monitor is conneted
 if [[ $(xrandr -d :0 -q | grep '\sconnected' | wc -l) -eq 2 ]]; then
-   xrandr --output eDP1 --mode 2160x1440 --output HDMI1 --mode 1920x1080 --right-of eDP1
-   xrandr --output HDMI1 --primary
+   xrandr --output eDP1 --mode 2160x1440 --output HDMI1 --primary --mode 1920x1080 --right-of eDP1
+   # xrandr --output HDMI1 --primary
 else
-   xrandr --output eDP1 --mode 2160x1440
-   xrandr --output eDP1 --primary
+   xrandr --output eDP1 --primary --mode 2160x1440
+   # xrandr --output eDP1 --primary
 fi
 
 # some java fix
 export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING
 
 # launch the business
 exec awesome
