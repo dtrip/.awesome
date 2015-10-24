@@ -77,9 +77,23 @@ theme.border_focus                  = "#7F7F7F"
 theme.border_marked                 = "#CC9393"
 theme.titlebar_bg_focus             = "#FFFFFF"
 theme.titlebar_bg_normal            = "#FFFFFF"
-theme.taglist_fg_focus              = "#D8D782"
-theme.tasklist_bg_focus             = "#1A1A1A"
+
+
+theme.taglist_bg_occupied           = "#d7ff80"
+theme.taglist_fg_occupied           = "#1a1a1a"
+theme.taglist_bg_focus              = "#b5d66c"
+theme.taglist_fg_focus              = "#1a1a1a"
+
+theme.taglist_bg_empty              = "#d7ff80"
+theme.taglist_fg_empty              = "#ccf27a"
+theme.taglist_bg_selected           = "#c2e673"
+-- theme.taglist_
+
+theme.tasklist_bg_normal            = "#1A1A1A"
+theme.tasklist_fg_normal            = "#b1b1b1"
+theme.tasklist_bg_focus             = "#242424"
 theme.tasklist_fg_focus             = "#D8D782"
+
 theme.textbox_widget_margin_top     = 15
 theme.notify_fg                     = theme.fg_normal
 theme.notify_bg                     = theme.bg_normal
@@ -93,13 +107,15 @@ theme.menu_width                    = "200"
 
 theme.arrow_bg_1                    = "#d7ff80"
 theme.arrow_bg_2                    = "#444444"
-theme.arrow_bg_3                    = "#5f84a9"
-theme.arrow_bg_4                    = "#475066"
-theme.arrow_bg_5                    = "#62a170"
-theme.arrow_bg_6                    = "#5a7de5"
-theme.arrow_bg_7                    = "#58ff25"
+theme.arrow_bg_3                    = "#333333"
+theme.arrow_bg_4                    = "#2b2b2b"
+theme.arrow_bg_5                    = "#262626"
+theme.arrow_bg_6                    = "#1f1f1f"
+theme.arrow_bg_7                    = "#a63737"
 theme.arrow_bg_8                    = "#313131"
 -- theme.arrow_bg_9                    = "#"
+
+theme.larrow_bg_1                   = "#d7ff80"
 
 theme.menu_submenu_icon             = themedir .. "/icons/submenu.png"
 theme.taglist_squares_sel           = themedir .. "/icons/square_sel.png"
@@ -125,7 +141,7 @@ theme.arrl_ld                       = themedir .. "/icons/arrl_ld.png"
 theme.arrl_ld_sf                    = themedir .. "/icons/arrl_ld_sf.png"
 
 -- theme.bg_systray                    = theme.bg_normal
-theme.bg_systray                    = theme.arrow_bg_7
+theme.bg_systray                    = theme.arrow_bg_6
 -- colored arrows & icons
 theme.arr1                          = themedir .. "/icons/powerarrow/20/arr1.png"
 theme.arr2                          = themedir .. "/icons/powerarrow/20/arr2.png"
@@ -138,6 +154,8 @@ theme.arr6e                         = themedir .. "/icons/powerarrow/20/arr6_end
 theme.arr7                          = themedir .. "/icons/powerarrow/20/arr7.png"
 theme.arr8                          = themedir .. "/icons/powerarrow/arr8.png"
 theme.arr9                          = themedir .. "/icons/powerarrow/arr9.png"
+
+theme.larr1                         = themedir .. "/icons/powerarrow/20/larr1.png"
 
 theme.pa_cpu                        = themedir .. "/icons/powerarrow/cpu.png"
 -- theme.pa_net                        = themedir .. "/icons/powerarrow/net.png"
