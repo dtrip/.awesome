@@ -37,7 +37,7 @@ fi
 
 # some java fix
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_AWT_WM_NONREPARENTING
+# export _JAVA_AWT_WM_NONREPARENTING
 
 # launch the business
 exec awesome

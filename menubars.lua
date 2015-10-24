@@ -1,6 +1,9 @@
 
 -- Create a laucher widget and a main menu
 require("arrows")
+require("mem")
+require("volume")
+require("cpu")
 -- require("rmenu")
 
 myawesomemenu = {
@@ -138,17 +141,23 @@ for s = 1, screen.count() do
 
     
     if s == 1 then
-        right_layout:add(arrl)
-        right_layout:add(spacer)
+        right_layout:add(arr7)
+        -- right_layout:add(spacer)
         right_layout:add(wibox.widget.systray())
-        right_layout:add(spacer)
+        -- right_layout:add(spacer)
+        right_layout:add(arr6)
+    else
+        right_layout:add(arr6e)
     end
 
-    right_layout:add(arr8)
+    -- right_layout:add(arr8)
     -- right_layout:add(arr7)
-    right_layout:add(arr6)
+    -- right_layout:add(arr6)
+    right_layout:add(vol)
     right_layout:add(arr5)
+    right_layout:add(c)
     right_layout:add(arr4)
+    right_layout:add(ramWidget)
     right_layout:add(arr3)
     right_layout:add(neticon)
     right_layout:add(wifiwidget)

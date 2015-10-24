@@ -1,6 +1,7 @@
 -- Standard awesome library
 gears = require("gears")
 awful = require("awful")
+blingbling = require("blingbling")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
@@ -21,8 +22,6 @@ radical = require("radical")
 -- alttab       = require( "radical.impl.alttab"        )
 -- rad_client   = require( "radical.impl.common.client" )
 -- rad_tag      = require( "radical.impl.common.tag"    )
-
-
 
 
 tyrannical = require("tyrannical")

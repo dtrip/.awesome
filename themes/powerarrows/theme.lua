@@ -92,12 +92,12 @@ theme.menu_height                   = "30"
 theme.menu_width                    = "200"
 
 theme.arrow_bg_1                    = "#d7ff80"
-theme.arrow_bg_2                    = "#061220"
-theme.arrow_bg_3                    = "#92b0a0"
-theme.arrow_bg_4                    = "#d0785d"
-theme.arrow_bg_5                    = "#4b3b51"
-theme.arrow_bg_6                    = "#4b696d"
-theme.arrow_bg_7                    = "#777e76"
+theme.arrow_bg_2                    = "#444444"
+theme.arrow_bg_3                    = "#5f84a9"
+theme.arrow_bg_4                    = "#475066"
+theme.arrow_bg_5                    = "#62a170"
+theme.arrow_bg_6                    = "#5a7de5"
+theme.arrow_bg_7                    = "#58ff25"
 theme.arrow_bg_8                    = "#313131"
 -- theme.arrow_bg_9                    = "#"
 
@@ -124,14 +124,18 @@ theme.arrl_dl                       = themedir .. "/icons/arrl_dl.png"
 theme.arrl_ld                       = themedir .. "/icons/arrl_ld.png"
 theme.arrl_ld_sf                    = themedir .. "/icons/arrl_ld_sf.png"
 
+-- theme.bg_systray                    = theme.bg_normal
+theme.bg_systray                    = theme.arrow_bg_7
 -- colored arrows & icons
 theme.arr1                          = themedir .. "/icons/powerarrow/20/arr1.png"
 theme.arr2                          = themedir .. "/icons/powerarrow/20/arr2.png"
 theme.arr3                          = themedir .. "/icons/powerarrow/20/arr3.png"
-theme.arr4                          = themedir .. "/icons/powerarrow/arr4.png"
-theme.arr5                          = themedir .. "/icons/powerarrow/arr5.png"
-theme.arr6                          = themedir .. "/icons/powerarrow/arr6.png"
-theme.arr7                          = themedir .. "/icons/powerarrow/arr7.png"
+theme.arr4                          = themedir .. "/icons/powerarrow/20/arr4.png"
+theme.arr5                          = themedir .. "/icons/powerarrow/20/arr5.png"
+theme.arr6                          = themedir .. "/icons/powerarrow/20/arr6.png"
+theme.arr6e                         = themedir .. "/icons/powerarrow/20/arr6_end.png"
+
+theme.arr7                          = themedir .. "/icons/powerarrow/20/arr7.png"
 theme.arr8                          = themedir .. "/icons/powerarrow/arr8.png"
 theme.arr9                          = themedir .. "/icons/powerarrow/arr9.png"
 
@@ -205,5 +209,8 @@ theme.awesome_lg_icon = themedir .. "/icons/awesome16-2.png"
 
 
 theme.datewidget_fg                 = "#353638"
+
+theme.graph_line_color              = "#d7ff80FF"
+theme.graph_color                   = "#a6d61bBF"
 
 return theme

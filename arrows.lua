@@ -31,6 +31,11 @@ arr5:set_image(beautiful.arr5)
 arr6 = wibox.widget.imagebox()
 arr6:set_image(beautiful.arr6)
 
+
+arr6e = wibox.widget.imagebox()
+arr6e:set_image(beautiful.arr6e)
+
+
 arr7 = wibox.widget.imagebox()
 arr7:set_image(beautiful.arr7)
 
