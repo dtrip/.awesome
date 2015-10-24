@@ -13,3 +13,6 @@
 [submodule "vicious"]
 	path = vicious
 	url = https://github.com/Mic92/vicious.git
+[submodule "obvious"]
+	path = obvious
+	url = https://github.com/hoelzro/obvious.git
