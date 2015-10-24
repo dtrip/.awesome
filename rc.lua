@@ -24,7 +24,7 @@ radical = require("radical")
 -- rad_tag      = require( "radical.impl.common.tag"    )
 
 
-tyrannical = require("tyrannical")
+-- tyrannical = require("tyrannical")
 
 -- {{{ Error handling
 require("errors")
