@@ -6,7 +6,7 @@ wifiwidget_txt = wibox.widget.textbox()
 wifiwidget = wibox.widget.background()
 wifiwidget:set_widget(wifiwidget_txt)
 wifiwidget:set_bg(beautiful.arrow_bg_2)
-wifiwidget:set_fg(beautiful.arrow_bg_1)
+wifiwidget:set_fg(beautiful.datewidget_fg)
 -- -- wifiwidget:set_border_color(beautiful.arrow_bg_2)
 vicious.register(wifiwidget_txt, vicious.widgets.wifi, " ${ssid} ${linp}% ", 3, 'mlan0')
 --

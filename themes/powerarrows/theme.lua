@@ -96,7 +96,7 @@ theme.tasklist_fg_focus             = "#D8D782"
 
 theme.textbox_widget_margin_top     = 15
 theme.notify_fg                     = theme.fg_normal
-theme.notify_bg                     = theme.bg_normal
+theme.notify_bg                     = "#1f1f1f"
 theme.notify_border                 = theme.border_focus
 theme.awful_widget_height           = 15
 theme.awful_widget_margin_top       = 0
@@ -106,10 +106,10 @@ theme.menu_height                   = "30"
 theme.menu_width                    = "200"
 
 theme.arrow_bg_1                    = "#d7ff80"
-theme.arrow_bg_2                    = "#444444"
-theme.arrow_bg_3                    = "#333333"
-theme.arrow_bg_4                    = "#2b2b2b"
-theme.arrow_bg_5                    = "#262626"
+theme.arrow_bg_2                    = "#accc66"
+theme.arrow_bg_3                    = "#81994d"
+theme.arrow_bg_4                    = "#505740"
+theme.arrow_bg_5                    = "#333333"
 theme.arrow_bg_6                    = "#1f1f1f"
 theme.arrow_bg_7                    = "#a63737"
 theme.arrow_bg_8                    = "#313131"

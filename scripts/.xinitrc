@@ -35,6 +35,9 @@ else
    # xrandr --output eDP1 --primary
 fi
 
+#disable capslock
+setxkbmap -option caps:none
+
 # some java fix
 export _JAVA_AWT_WM_NONREPARENTING=1
 # export _JAVA_AWT_WM_NONREPARENTING
