@@ -1,3 +1,4 @@
+require("java")
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
@@ -16,6 +17,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
+            delay_raise()
             if client.focus then client.focus:raise() end
         end),
 
@@ -46,9 +48,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
+            delay_raise()
+            -- if client.focus then
+                -- client.focus:raise()
+            -- end
         end),
 
     -- Standard program
