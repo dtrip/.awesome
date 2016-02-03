@@ -20,3 +20,5 @@ awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
 
 -- launches onscreen keyboard
 awful.util.spawn_with_shell("onboard &")
+awful.util.spawn_with_shell("blueman-applet &")
+awful.util.spawn_with_shell("indicator-sound-switcher &")
