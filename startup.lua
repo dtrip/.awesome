@@ -12,6 +12,7 @@ awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &
 -- used to start solaar applet for logitech keyboards
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/x11-calibrator.bash")
+awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
 
 -- starts conky widgets
 awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
@@ -21,4 +22,3 @@ awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
 -- launches onscreen keyboard
 awful.util.spawn_with_shell("onboard &")
 awful.util.spawn_with_shell("blueman-applet &")
-awful.util.spawn_with_shell("indicator-sound-switcher &")
