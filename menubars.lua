@@ -23,6 +23,7 @@ mymainmenu = awful.menu({ items = {
                                     { "Incognito Chrome", "chromium-browser --incognito", beautiful.www_icon },
                                     { "Burp Suite", "burpsuite", beautiful.burp_icon },
                                     { "Terminal", terminal, beautiful.term_icon },
+                                    { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
                                     { "Keyboard", "onboard", beautiful.keyboard },
                                     { "Files", "pcmanfm", beautiful.files },
                                     { "ReCalibrate Touch", "xinput_calibrator", beautiful.touchcali },

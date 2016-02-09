@@ -213,6 +213,7 @@ theme.battery_empty                 = themedir .. "/icons/gpm-battery-empty.png"
 theme.keyboard                      = themedir .. "/icons/keyboard.png"
 theme.touchcali                     = themedir .. "/icons/touch-cali.png"
 theme.burp_icon                     = themedir .. "/icons/burp.png"
+theme.sqlite_icon                     = themedir .. "/icons/sqlitestudio.png"
 
 theme.icon_theme_size = "64x64"
 
