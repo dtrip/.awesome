@@ -13,6 +13,7 @@ awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/x11-calibrator.bash")
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
+awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
 
 -- starts conky widgets
 awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
@@ -20,5 +21,4 @@ awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
 -- awful.util.spawn_with_shell("sh " .. CONFIG_PATH .. "/scripts/wallpaper &")
 
 -- launches onscreen keyboard
-awful.util.spawn_with_shell("onboard &")
-awful.util.spawn_with_shell("blueman-applet &")
+-- awful.util.spawn_with_shell("onboard &")
