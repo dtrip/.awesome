@@ -153,9 +153,10 @@ for s = 1, screen.count() do
         right_layout:add(arr6e)
     end
 
-    -- right_layout:add(arr8)
+    -- right_layout:add(arr8)if
     -- right_layout:add(arr7)
     -- right_layout:add(arr6)
+    right_layout:add(baticon)
     right_layout:add(batwidget)
     right_layout:add(vol)
     right_layout:add(arr5)

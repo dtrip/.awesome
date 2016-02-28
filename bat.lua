@@ -7,6 +7,14 @@
 -- batwidget:set_fg(beautiful.datewidget_fg)
 -- vicious.register(batwidget_txt, vicious.widgets.bat, " $2", 3, 'BAT0')
 
+
+baticon = wibox.widget.imagebox()
+baticon:set_image(beautiful.widget_battery)
+
+
+local btimer = 0 -- battery timer in seconds
+local binterval = 5 -- interval to check battery
+
 local batCfg = {
     width = 40,
     height = 18,
@@ -18,4 +26,15 @@ local batCfg = {
     graph_background_color = beautiful.arrow_bg_6
 }
 batwidget = blingbling.triangular_progress_graph(batCfg)
-vicious.register(batwidget, vicious.widgets.bat, "$2", 3, 'BAT0')
+-- vicious.register(batwidget, vicious.widgets.bat, "$2", 3, 'BAT1')
+vicious.register(batwidget, vicious.widgets.bat, 
+    function (widget, args)
+        -- on AC Power
+        if args[1] == "-" then
+            baticon:set_image(beautiful.widget_ac)
+        -- else on Battery
+        else
+            baticon:set_image(beautiful.widget_battery)
+        end
+        return args[2]
+end, 3, 'BAT1')
