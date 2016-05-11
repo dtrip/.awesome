@@ -31,8 +31,8 @@ datewidget_txt = wibox.layout.constraint(datewidget_txt2, "exact", 158, nil)
 datewidget = wibox.widget.background()
 -- datewidget.width = 300
 datewidget:set_widget(datewidget_txt)
-datewidget:set_bg(beautiful.arrow_bg_1)
-datewidget:set_fg(beautiful.datewidget_fg)
+-- datewidget:set_bg(beautiful.arrow_bg_1)
+-- datewidget:set_fg(beautiful.datewidget_fg)
 vicious.register(datewidget_txt2, vicious.widgets.date, " %b %d %r", 1)
 
 

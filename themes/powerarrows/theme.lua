@@ -27,7 +27,7 @@ end
 themedir      = themes .. themename
 
 -- wallpaper1    = themedir .. "/spacebg.png"
-theme.wallpaper    = themedir .. "/dcity2.png"
+theme.wallpaper    = themedir .. "/jumpgr.png"
 -- wallpaper1    = themedir .. "/bgt.png"
 -- wallpaper1    = themedir .. "/hud3.png"
 -- wallpaper1    = themedir .. "/1504.png"
@@ -64,13 +64,14 @@ theme.wallpaper2    = themedir .. "/jumpgr.png"
 
 -- theme.font                          = "Terminus 9"
 -- theme.font                          = "Oxygen-Sans Sans-Book 7"
-theme.font                          = "Panton 12"
+theme.font                          = "Panton 10"
 theme.fg_normal                     = "#e8e8e8"
 theme.fg_focus                      = "#F0DFAF"
 theme.fg_urgent                     = "#CC9393"
-theme.bg_normal                     = "#1A1A1A"
-theme.bg_focus                      = "#313131"
-theme.bg_urgent                     = "#1A1A1A"
+theme.bg_normal                     = "#2f343f" -- main top title bar BG color
+-- theme.bg_focus                      = "#5a98c8" -- right click menu bg for selected item
+theme.bg_focus                      = "#FFFFFF" -- right click menu bg for selected item
+theme.bg_urgent                     = "#2f343f"
 theme.border_width                  = "0"
 theme.border_normal                 = "#3F3F3F"
 theme.border_focus                  = "#7F7F7F"
@@ -89,10 +90,10 @@ theme.taglist_fg_empty              = "#ccf27a"
 theme.taglist_bg_selected           = "#c2e673"
 -- theme.taglist_
 
-theme.tasklist_bg_normal            = "#1A1A1A"
-theme.tasklist_fg_normal            = "#b1b1b1"
-theme.tasklist_bg_focus             = "#242424"
-theme.tasklist_fg_focus             = "#D8D782"
+theme.tasklist_bg_normal            = "#2f343f" -- other apps on same screen
+theme.tasklist_fg_normal            = "#434a59"
+theme.tasklist_bg_focus             = "#2f343f" -- Currently using app
+theme.tasklist_fg_focus             = "#b1b1b1"
 
 theme.textbox_widget_margin_top     = 15
 theme.notify_fg                     = theme.fg_normal
@@ -105,12 +106,12 @@ theme.bar_height                    = 18
 theme.menu_height                   = "30"
 theme.menu_width                    = "200"
 
-theme.arrow_bg_1                    = "#d7ff80"
-theme.arrow_bg_2                    = "#accc66"
-theme.arrow_bg_3                    = "#81994d"
-theme.arrow_bg_4                    = "#505740"
-theme.arrow_bg_5                    = "#333333"
-theme.arrow_bg_6                    = "#1f1f1f"
+theme.arrow_bg_1                    = "#71aad2"
+theme.arrow_bg_2                    = "#268bd2"
+theme.arrow_bg_3                    = "#2aa198"
+theme.arrow_bg_4                    = "#404552"
+theme.arrow_bg_5                    = "#b58900"
+theme.arrow_bg_6                    = "#657b83"
 theme.arrow_bg_7                    = "#a63737"
 theme.arrow_bg_8                    = "#313131"
 -- theme.arrow_bg_9                    = "#"
@@ -141,7 +142,7 @@ theme.arrl_ld                       = themedir .. "/icons/arrl_ld.png"
 theme.arrl_ld_sf                    = themedir .. "/icons/arrl_ld_sf.png"
 
 -- theme.bg_systray                    = theme.bg_normal
-theme.bg_systray                    = theme.arrow_bg_6
+theme.bg_systray                    = theme.bg_normal
 -- colored arrows & icons
 theme.arr1                          = themedir .. "/icons/powerarrow/20/arr1.png"
 theme.arr2                          = themedir .. "/icons/powerarrow/20/arr2.png"
@@ -152,6 +153,7 @@ theme.arr6                          = themedir .. "/icons/powerarrow/20/arr6.png
 theme.arr6e                         = themedir .. "/icons/powerarrow/20/arr6_end.png"
 
 theme.arr7                          = themedir .. "/icons/powerarrow/20/arr7.png"
+theme.arrclr                        = themedir .. "/icons/powerarrow/20/arrow_clr.png"
 theme.arr8                          = themedir .. "/icons/powerarrow/arr8.png"
 theme.arr9                          = themedir .. "/icons/powerarrow/arr9.png"
 

@@ -7,11 +7,11 @@ ram_conf = {
     v_margin = 0,
     label = "RAM: $percent%",
     rounded_size = 0,
-    background_color = beautiful.arrow_bg_3,
+    background_color = beautiful.bg_normal,
     graph_line_color = beautiful.graph_line_color,
     graph_color      = beautiful.graph_color,
-    graph_background_color = beautiful.arrow_bg_3,
-    background_border = beautiful.arrow_bg_3
+    graph_background_color = beautiful.bg_normal,
+    background_border = beautiful.bg_normal
 }
 
 -- ramLbl = widget({ type="textbox" })

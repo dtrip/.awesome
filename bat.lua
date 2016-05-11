@@ -22,8 +22,8 @@ local batCfg = {
     label = "$percent%",
     value_format = "%2.f",
     show_text = true,
-    background_color = beautiful.arrow_bg_6,
-    graph_background_color = beautiful.arrow_bg_6
+    background_color = beautiful.bg_normal,
+    graph_background_color = beautiful.bg_normal
 }
 batwidget = blingbling.triangular_progress_graph(batCfg)
 -- vicious.register(batwidget, vicious.widgets.bat, "$2", 3, 'BAT1')
@@ -37,4 +37,4 @@ vicious.register(batwidget, vicious.widgets.bat,
             baticon:set_image(beautiful.widget_battery)
         end
         return args[2]
-end, 3, 'BAT1')
+end, binterval, 'BAT1')

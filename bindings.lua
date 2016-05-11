@@ -17,7 +17,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
-            delay_raise()
+            -- delay_raise()
             if client.focus then client.focus:raise() end
         end),
 
@@ -48,7 +48,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.history.previous()
-            delay_raise()
+            -- delay_raise()
             -- if client.focus then
                 -- client.focus:raise()
             -- end
@@ -79,7 +79,10 @@ globalkeys = awful.util.table.join(
               end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[awful.screen.focused()]:run() end),
+    awful.key({ modkey }, "r",
+        function () 
+            mypromptbox[awful.screen.focused()]:run() 
+        end),
 
     awful.key({ modkey }, "x",
               function ()

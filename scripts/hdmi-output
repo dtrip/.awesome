@@ -1,0 +1,14 @@
+#!/bin/bash
+# Run script when external monitor connects to computer
+# in this situation HDMI cord into laptop (builtin display)
+
+#log tag
+LT=HDMI
+
+logger -i -t $LT "Setting resolution for HDMI1"
+if xrandr --output eDP1 --off --output HDMI1 --primary --mode 1920x1080; then
+    exit 0
+else
+    logger -is -t $LT "ERROR: Unable to set display with xrandr"
+    exit 1
+fi

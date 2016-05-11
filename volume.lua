@@ -7,7 +7,7 @@ local volCfg = {
     show_text = true,
     label = "$percent%",
     pulseaudio = true,
-    background_color = theme.arrow_bg_5,
+    background_color = theme.bg_normal,
     graph_color = beautiful.graph_line_color
 }
 

@@ -122,7 +122,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", height = '20', screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = '15', screen = s })
 
     -- statusBars[s] = awful.wibox({ position = "bottom", screen = s })
     -- statusBars[s] = awful.wibox({ position = "bottom", ontop=false, screen = s, height="18" })
@@ -137,39 +137,44 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    right_layout:add(mykeyboardlayout)
+    -- right_layout:add(mykeyboardlayout)
 
     -- if s == 1 then right_layout:add(wibox.widget.systray()) end
     -- right_layout:add(mytextclock)
 
-    
+    --
     if s == 1 then
-        right_layout:add(arr7)
+        right_layout:add(arrclr)
         -- right_layout:add(spacer)
         right_layout:add(wibox.widget.systray())
         -- right_layout:add(spacer)
-        right_layout:add(arr6)
+        right_layout:add(arrclr)
     else
-        right_layout:add(arr6e)
+        right_layout:add(arrclr)
     end
+
+
+
 
     -- right_layout:add(arr8)if
     -- right_layout:add(arr7)
     -- right_layout:add(arr6)
+    --
     right_layout:add(baticon)
     right_layout:add(batwidget)
+    right_layout:add(arrclr)
     right_layout:add(vol)
-    right_layout:add(arr5)
+    right_layout:add(arrclr)
     right_layout:add(c)
-    right_layout:add(arr4)
+    right_layout:add(arrclr)
     right_layout:add(ramWidget)
-    right_layout:add(arr3)
+    right_layout:add(arrclr)
     -- right_layout:add(neticon)
     right_layout:add(wifiwidget)
     right_layout:add(wifiwidgetSSID)
-    right_layout:add(arr2)
+    right_layout:add(arrclr)
     right_layout:add(datewidget)
-    right_layout:add(arr1)
+    right_layout:add(arrclr)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)

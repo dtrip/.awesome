@@ -8,8 +8,8 @@ local cCfg = {
     show_text = true,
     label = "CPU: $percent%",
     rounded_size = 0,
-    background_color = beautiful.arrow_bg_4,
-    graph_background_color = beautiful.arrow_bg_4,
+    background_color = beautiful.bg_normal,
+    graph_background_color = beautiful.bg_normal,
     graph_line_color = beautiful.graph_line_color,
     graph_color = beautiful.graph_color
 }

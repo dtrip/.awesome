@@ -47,3 +47,6 @@ arr9:set_image(beautiful.arr9)
 
 larr1 = wibox.widget.imagebox()
 larr1:set_image(beautiful.larr1)
+
+arrclr = wibox.widget.imagebox()
+arrclr:set_image(beautiful.arrclr)
