@@ -4,8 +4,8 @@ require("arrows")
 require("mem")
 require("volume")
 require("cpu")
-require("bat")
--- require("rmenu")
+-- require("bat")
+require("rmenu")
 
 myawesomemenu = {
    { "Manual", terminal .. " -e man awesome" },
@@ -160,8 +160,8 @@ for s = 1, screen.count() do
     -- right_layout:add(arr7)
     -- right_layout:add(arr6)
     --
-    right_layout:add(baticon)
-    right_layout:add(batwidget)
+    -- right_layout:add(baticon)
+    -- right_layout:add(batwidget)
     right_layout:add(arrclr)
     right_layout:add(vol)
     right_layout:add(arrclr)
@@ -170,8 +170,8 @@ for s = 1, screen.count() do
     right_layout:add(ramWidget)
     right_layout:add(arrclr)
     -- right_layout:add(neticon)
-    right_layout:add(wifiwidget)
-    right_layout:add(wifiwidgetSSID)
+    -- right_layout:add(wifiwidget)
+    -- right_layout:add(wifiwidgetSSID)
     right_layout:add(arrclr)
     right_layout:add(datewidget)
     right_layout:add(arrclr)

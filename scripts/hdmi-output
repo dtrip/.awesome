@@ -7,6 +7,9 @@ LT=HDMI
 
 logger -i -t $LT "Setting resolution for HDMI1"
 if xrandr --output eDP1 --off --output HDMI1 --primary --mode 1920x1080; then
+    wait;
+    sleep 2s;
+    echo "awesome.restart()" | awesome-client;
     exit 0
 else
     logger -is -t $LT "ERROR: Unable to set display with xrandr"

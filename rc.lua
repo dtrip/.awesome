@@ -62,7 +62,7 @@ require("layouts")
 
 require("calendar")
 require("java")
-require("net")
+-- require("net")
 
 -- {{{ Helper functions
 require("helpers")
