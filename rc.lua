@@ -9,8 +9,11 @@ beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
--- vicious = require("vicious")
+vicious = require("vicious")
 radical = require("radical")
+
+require("calendar")
+obvious = require("obvious")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
@@ -234,43 +237,45 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
+    --
+    -- bar_menu, bar_menu_w = radical.bar {
+    --     item_style = radical.item.style.basic,
+    --     text = " 1 ",
+    --     style = radical.style.classic,
+    --     arrow_type = radical.base.arrow_type.PRETTY,
+    --     layout = radical.layout.horiztonal,
+    --     -- disable_submenu_icon = true,
+    --     spacing = 4,
+    --     -- bg_used = beautiful.bg_normal,
+    --     -- bg = beautiful.bg_urgent,
+    --     -- fg_focus = beautiful.fg_focus,
+    --     -- fg = beautiful.fg_normal,
+    --     default_item_margins = {
+    --         TOP = 0,
+    --         BOTTOM = 0,
+    --         LEFT = 0,
+    --         RIGHT = 20
+    --     }
+    -- }
 
-    bar_menu, bar_menu_w = radical.bar {
-        -- item_style = radical.item.style.arrow_prefix,
-        -- style = radical.style.arrow_single,
-        -- arrow_type = radical.base.arrow_type.NONE,
-        -- layout = radical.layout.horiztonal,
-        -- disable_submenu_icon = true,
-        spacing = 4,
-        bg_used = beautiful.bg_normal,
-        bg = beautiful.bg_urgent,
-        fg_focus = beautiful.fg_focus,
-        fg = beautiful.fg_normal,
-        -- default_item_margins = {
-        --     TOP = 0,
-        --     BOTTOM = 0,
-        --     LEFT = 0,
-        --     RIGHT = 20
-        -- }
-    }
 
-
-    bar_menu:add_colors_namespace("toolbox")
-
-    local it = bar_menu:add_item{
-       text = "Sub",
-        item_style = radical.item.style.arrow_prefix,
-        icon = beautiful.ubuntu_drk,
-        tooltip = "Application Menu",
-        sub_menu = function ()
-            local smenu = radical.context{
-            }
-            smenu:add_item{ text="Menu Item" }
-            smenu:add_item{ text="Menu Item2", icon=beautiful.firefox }
-            return smenu
-        end}
-
-    it.state[radical.base.item_flags.USED] = true
+    -- bar_menu:add_colors_namespace("toolbox")
+    --
+    -- local it = bar_menu:add_item{
+    --    text = "Sub",
+    --     item_style = radical.item.style.arrow_prefix,
+    --     arrow_type = radical.base.arrow_type.NONE,
+    --     icon = beautiful.ubuntu_drk,
+    --     tooltip = "Application Menu",
+    --     sub_menu = function ()
+    --         local smenu = radical.context{
+    --         }
+    --         smenu:add_item{ text="Menu Item" }
+    --         smenu:add_item{ text="Menu Item2", icon=beautiful.firefox }
+    --         return smenu
+    --     end}
+    --
+    -- it.state[radical.base.item_flags.USED] = true
 
 
 
@@ -310,6 +315,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             mylauncher,
+            -- bar_menu_w,
             mytaglist[s],
             larr1,
             mypromptbox[s],
@@ -319,7 +325,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
-            mytextclock,
+            datewidget,  
+            -- mytextclock,
             mylayoutbox[s],
         },
     }
