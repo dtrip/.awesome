@@ -157,6 +157,9 @@ theme.arrclr                        = themedir .. "/icons/powerarrow/20/arrow_cl
 theme.arr8                          = themedir .. "/icons/powerarrow/arr8.png"
 theme.arr9                          = themedir .. "/icons/powerarrow/arr9.png"
 
+theme.arrby                          = themedir .. "/icons/powerarrow/arr2by.png"
+theme.arryb                          = themedir .. "/icons/powerarrow/arr2yb.png"
+
 theme.larr1                         = themedir .. "/icons/powerarrow/20/larr1.png"
 
 theme.pa_cpu                        = themedir .. "/icons/powerarrow/cpu.png"
@@ -167,7 +170,7 @@ theme.widget_ac                     = themedir .. "/icons/ac.png"
 theme.widget_battery                = themedir .. "/icons/battery.png"
 theme.widget_battery_low            = themedir .. "/icons/battery_low.png"
 theme.widget_battery_empty          = themedir .. "/icons/battery_empty.png"
-theme.widget_mem                    = themedir .. "/icons/powerarrow/mem.png"
+theme.widget_mem                    = themedir .. "/icons/mem.png"
 theme.widget_cpu                    = themedir .. "/icons/cpu.png"
 theme.widget_temp                   = themedir .. "/icons/temp.png"
 theme.widget_net                    = themedir .. "/icons/net.png"

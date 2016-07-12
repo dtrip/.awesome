@@ -10,10 +10,9 @@ beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 vicious = require("vicious")
-radical = require("radical")
+-- radical = require("radical")
 
-require("calendar")
-obvious = require("obvious")
+-- obvious = require("obvious")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
@@ -68,6 +67,11 @@ end
 beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
 
 require("arrows")
+require("calendar")
+require("net")
+require("cpu")
+require("mem")
+require("bat")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
@@ -325,7 +329,20 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+            arrby,
+            baticon,
+            batwidget,
+            arryb,
+            ramIcon,
+            ramWidget,
+            arrby,
+            cpuIcon,
+            cpuWidget,
+            arryb,
+            wifiwidgetSSID,
+            arrby,
             datewidget,  
+            arryb,
             -- mytextclock,
             mylayoutbox[s],
         },
@@ -567,7 +584,11 @@ for i = 1, 9 do
                           end
                       end
                   end,
-                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+                  {description = "toggle focused client on tag #" .. i, group = "tag"}),
+
+          awful.key({modkey,            }, "F1",     function () awful.screen.focus(1) end),
+          awful.key({modkey,            }, "F2",     function () awful.screen.focus(2) end)
+
     )
 end
 

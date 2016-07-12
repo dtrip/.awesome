@@ -50,3 +50,14 @@ larr1:set_image(beautiful.larr1)
 
 arrclr = wibox.widget.imagebox()
 arrclr:set_image(beautiful.arrclr)
+
+
+arryb = wibox.widget.imagebox()
+arryb:set_image(beautiful.arryb)
+
+arrby = wibox.widget.imagebox()
+arrby:set_image(beautiful.arrby)
+
+
+
+
