@@ -1,7 +1,7 @@
 
 --  Date widget
-datewidget_txt = wibox.widget.textbox()
--- datewidget_txt = wibox.layout.constraint(datewidget_txt2, "exact", 158, nil)
+datewidget_txt2 = wibox.widget.textbox()
+datewidget_txt = wibox.layout.constraint(datewidget_txt2, "exact", 125, nil)
 -- datewidget_txt:set_bg(beautiful.larrow_bg_1)
 
 datewidget = wibox.widget.background()
@@ -9,7 +9,7 @@ datewidget = wibox.widget.background()
 datewidget:set_widget(datewidget_txt)
 datewidget:set_bg(beautiful.larrow_bg_1)
 datewidget:set_fg(beautiful.bg_normal)
-vicious.register(datewidget_txt, vicious.widgets.date, " %b %d %r", 1)
+vicious.register(datewidget_txt2, vicious.widgets.date, " %b %d %r", 1)
 
 
 -- calendar = blingbling.calendar()
