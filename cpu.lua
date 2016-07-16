@@ -8,7 +8,7 @@ c = wibox.widget.textbox()
 
 cpuWidget = wibox.widget.background()
 cpuWidget:set_widget(c)
-cpuWidget:set_bg(beautiful.larrow_bg_1)
+cpuWidget:set_bg(beautiful.arrow_bg_3)
 cpuWidget:set_fg(beautiful.bg_normal)
 
 

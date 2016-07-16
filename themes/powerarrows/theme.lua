@@ -106,11 +106,11 @@ theme.bar_height                    = 18
 theme.menu_height                   = "30"
 theme.menu_width                    = "200"
 
-theme.arrow_bg_1                    = "#71aad2"
-theme.arrow_bg_2                    = "#268bd2"
-theme.arrow_bg_3                    = "#2aa198"
-theme.arrow_bg_4                    = "#404552"
-theme.arrow_bg_5                    = "#b58900"
+theme.arrow_bg_1                    = "#d7ff80"
+theme.arrow_bg_2                    = "#B5D673"
+theme.arrow_bg_3                    = "#93AD66"
+theme.arrow_bg_4                    = "#728559"
+theme.arrow_bg_5                    = "#505C4C"
 theme.arrow_bg_6                    = "#657b83"
 theme.arrow_bg_7                    = "#a63737"
 theme.arrow_bg_8                    = "#313131"
@@ -144,11 +144,11 @@ theme.arrl_ld_sf                    = themedir .. "/icons/arrl_ld_sf.png"
 -- theme.bg_systray                    = theme.bg_normal
 theme.bg_systray                    = theme.bg_normal
 -- colored arrows & icons
-theme.arr1                          = themedir .. "/icons/powerarrow/20/arr1.png"
-theme.arr2                          = themedir .. "/icons/powerarrow/20/arr2.png"
-theme.arr3                          = themedir .. "/icons/powerarrow/20/arr3.png"
-theme.arr4                          = themedir .. "/icons/powerarrow/20/arr4.png"
-theme.arr5                          = themedir .. "/icons/powerarrow/20/arr5.png"
+theme.arr1                          = themedir .. "/icons/powerarrow/arr1.png"
+theme.arr2                          = themedir .. "/icons/powerarrow/arr2.png"
+theme.arr3                          = themedir .. "/icons/powerarrow/arr3.png"
+theme.arr4                          = themedir .. "/icons/powerarrow/arr4.png"
+theme.arr5                          = themedir .. "/icons/powerarrow/arr5.png"
 theme.arr6                          = themedir .. "/icons/powerarrow/20/arr6.png"
 theme.arr6e                         = themedir .. "/icons/powerarrow/20/arr6_end.png"
 

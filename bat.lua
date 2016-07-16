@@ -12,8 +12,8 @@ batwidget_txt = wibox.widget.textbox()
 
 batwidget:set_widget(batwidget_txt)
 
-batwidget:set_bg(beautiful.larrow_bg_1)
-batwidget:set_fg(beautiful.bg_normal)
+batwidget:set_bg(beautiful.arrow_bg_5)
+batwidget:set_fg(beautiful.fg_normal)
 
 
 vicious.register(batwidget_txt, vicious.widgets.bat, 
