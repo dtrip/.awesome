@@ -2,6 +2,6 @@
 
 if [[ $(which solaar) ]]; then
     if [[ -z $(pgrep solaar) ]]; then
-        sudo solaar &
+        solaar &
     fi
 fi
