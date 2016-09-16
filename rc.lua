@@ -31,7 +31,7 @@ awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
 
 -- starts conky widgets
-awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
+-- awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
 
 awful.util.spawn_with_shell("xscreensaver -no-splash &")
 -- }}}
@@ -300,7 +300,7 @@ awful.screen.connect_for_each_screen(function(s)
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibar({ position = "top", height=15, screen = s })
+    mywibox[s] = awful.wibar({ position = "top", height=25, screen = s })
     -- mywibox[s] = awful.wibox({ position = "top", height=15, screen = s })
 
 

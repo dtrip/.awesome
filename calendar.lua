@@ -1,7 +1,7 @@
 
 --  Date widget
 datewidget_txt2 = wibox.widget.textbox()
-datewidget_txt = wibox.layout.constraint(datewidget_txt2, "exact", 125, nil)
+datewidget_txt = wibox.layout.constraint(datewidget_txt2, "exact", 250, nil)
 -- datewidget_txt:set_bg(beautiful.larrow_bg_1)
 
 datewidget = wibox.widget.background()
