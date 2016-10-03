@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Turn backlight down for what
-xbacklight -set 50%
+xbacklight -set 20%
 
 # Export KDE styles to QT
 export QT_PLUGIN_PATH="${HOME}/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/"
@@ -34,7 +34,9 @@ xsetroot -cursor_name left_ptr
    # xrandr --output eDP1 --primary --mode 1366x768
    # xrandr --output eDP1 --primary
 # fi
-xrandr --output eDP1 --primary --mode 1366x768
+# xrandr --output eDP1 --primary --mode 1366x768
+
+xrandr --output eDP1 --auto
 
 #disable capslock
 setxkbmap -option caps:none

@@ -8,7 +8,7 @@ wifiwidgetSSID:set_widget(wifiwidget_txt)
 wifiwidgetSSID:set_bg(beautiful.arrow_bg_2)
 wifiwidgetSSID:set_fg(beautiful.bg_normal)
 -- -- wifiwidget:set_border_color(beautiful.arrow_bg_2)
-vicious.register(wifiwidget_txt, vicious.widgets.wifi, " ${ssid} ${linp}% ", 3, 'wlan0')
+vicious.register(wifiwidget_txt, vicious.widgets.wifi, " ${ssid} ${linp}% ", 3, 'wlo1')
 --
 --
 -- local netCfg = {

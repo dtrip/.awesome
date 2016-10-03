@@ -26,8 +26,9 @@ awful.util.spawn_with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
 awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &")
 
 -- used to start solaar applet for logitech keyboards
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
+-- awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
+-- awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
+awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/pulseaudio.bash")
 -- awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
 
 -- starts conky widgets
@@ -138,8 +139,10 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = {
                                     { "Firefox", "firefox", beautiful.firefox },
-                                    { "Chrome", "chromium-browser", beautiful.www_icon },
-                                    { "Incognito Chrome", "chromium-browser --incognito", beautiful.www_icon },
+                                    -- { "Chrome", "chromium-browser", beautiful.www_icon },
+                                    { "Chrome", "chromium", beautiful.www_icon },
+                                    -- { "Incognito Chrome", "chromium-browser --incognito", beautiful.www_icon },
+                                    { "Incognito Chrome", "chromium --incognito", beautiful.www_icon },
                                     { "Burp Suite", "burpsuite", beautiful.burp_icon },
                                     { "Terminal", terminal, beautiful.term_icon },
                                     { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },

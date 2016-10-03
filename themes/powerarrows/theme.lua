@@ -27,7 +27,7 @@ end
 themedir      = themes .. themename
 
 -- wallpaper1    = themedir .. "/spacebg.png"
-theme.wallpaper    = themedir .. "/cod.jpg"
+theme.wallpaper    = themedir .. "/snow.jpg"
 -- wallpaper1    = themedir .. "/bgt.png"
 -- wallpaper1    = themedir .. "/hud3.png"
 -- wallpaper1    = themedir .. "/1504.png"
