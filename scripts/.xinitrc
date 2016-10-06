@@ -46,6 +46,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # export _JAVA_AWT_WM_NONREPARENTING
 
 # launch the business
-exec awesome
+# exec awesome
+exec $1
 # exec dwm
 #exec ck-launch-session db-launch awesome
