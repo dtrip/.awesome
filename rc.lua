@@ -19,7 +19,8 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
 
 -- {{{ startup scripts
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/xcomp.bash &")
+-- awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/xcomp.bash &")
+-- awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
 awful.util.spawn_with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
 
 -- sets network monitor applet in taskbar

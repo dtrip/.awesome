@@ -26,4 +26,4 @@ vicious.register(batwidget_txt, vicious.widgets.bat,
             baticon:set_image(beautiful.widget_battery)
         end
         return args[2] .. "%" .. args[1]
-end, binterval, 'BAT0')
+end, binterval, 'BAT1')
