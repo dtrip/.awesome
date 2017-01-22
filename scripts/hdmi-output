@@ -5,6 +5,8 @@
 #log tag
 LT=HDMI
 
+
+
 logger -i -t $LT "Setting resolution for HDMI1"
 if xrandr --output eDP1 --off --output HDMI1 --primary --mode 1920x1080; then
     wait;

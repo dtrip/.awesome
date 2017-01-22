@@ -12,6 +12,9 @@ local menubar = require("menubar")
 vicious = require("vicious")
 -- radical = require("radical")
 
+
+-- require("debian.menu")
+
 -- obvious = require("obvious")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
