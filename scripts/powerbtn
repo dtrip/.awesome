@@ -1,0 +1,41 @@
+#!/bin/bash
+
+export XAUTHORITY=/home/dtrip/.Xauthority
+export DISPLAY=:0 
+
+LCD=/sys/class/drm/card0-eDP-1/dpms
+LCK=/tmp/screenblank.lock
+
+logger "powerbtn script is execuging"
+
+# sleep 1
+
+if [ $(cat $LCD | grep -Ec "^On") -eq 1 ] && [ ! -e $LCK ]; then
+    logger "turnning off monitor"
+
+    # disables inputs that would itnerrupt it
+    xinput disable "Microsoft Surface Type Cover Touchpad"
+    xinput disable "Microsoft Surface Type Cover Mouse"
+    xinput disable "Microsoft Surface Type Cover Keyboard"
+    xinput disable "ipts 1B96:006A SingleTouch"
+    xinput disable "ipts 1B96:006A Pen"
+    xinput disable "ipts 1B96:006A Mouse"
+
+    touch $LCK
+
+    # xset dpms force standby >! /home/dtrip/xr
+    xset dpms force off
+else
+    xset dpms force on
+
+    # re-enable inputs
+    xinput enable "Microsoft Surface Type Cover Touchpad"
+    xinput enable "Microsoft Surface Type Cover Mouse"
+    xinput enable "Microsoft Surface Type Cover Keyboard"
+    xinput enable "ipts 1B96:006A SingleTouch"
+    xinput enable "ipts 1B96:006A Pen"
+    xinput enable "ipts 1B96:006A Mouse" 
+
+    # removes lock file
+    rm -rf $LCK
+fi

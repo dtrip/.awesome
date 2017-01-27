@@ -150,7 +150,7 @@ mymainmenu = awful.menu({ items = {
                                     { "Burp Suite", "burpsuite", beautiful.burp_icon },
                                     { "Terminal", terminal, beautiful.term_icon },
                                     { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
-                                    -- { "Keyboard", "onboard", beautiful.keyboard },
+                                    { "Keyboard", "onboard", beautiful.keyboard },
                                     { "Files", "pcmanfm", beautiful.files },
                                     -- { "ReCalibrate Touch", "xinput_calibrator", beautiful.touchcali },
                                     -- { "Terminology", terminology, beautiful.term_icon },
