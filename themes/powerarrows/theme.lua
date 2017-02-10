@@ -61,7 +61,7 @@ theme.wallpaper2    = themedir .. "/jumpgr.png"
   -- theme.wallpaper = wallpaper4
 -- end
 --}}}
-
+theme.background                    = "#000000"
 -- theme.font                          = "Terminus 9"
 -- theme.font                          = "Oxygen-Sans Sans-Book 7"
 theme.font                          = "Panton 10"
