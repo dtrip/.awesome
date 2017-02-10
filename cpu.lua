@@ -6,7 +6,7 @@ cpuIcon:set_image(beautiful.widget_cpu)
 
 c = wibox.widget.textbox()
 
-cpuWidget = wibox.widget.background()
+cpuWidget = wibox.container.background()
 cpuWidget:set_widget(c)
 cpuWidget:set_bg(beautiful.arrow_bg_3)
 cpuWidget:set_fg(beautiful.bg_normal)

@@ -7,7 +7,7 @@ local btimer = 0 -- battery timer in seconds
 local binterval = 5 -- interval to check battery
 
 
-batwidget = wibox.widget.background()
+batwidget = wibox.container.background()
 batwidget_txt = wibox.widget.textbox()
 
 batwidget:set_widget(batwidget_txt)

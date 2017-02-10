@@ -22,23 +22,24 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
 
 -- {{{ startup scripts
--- awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/xcomp.bash &")
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
-awful.util.spawn_with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
+-- awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xcomp.bash &")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
+awful.spawn.with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
 
 -- sets network monitor applet in taskbar
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &")
 
 -- used to start solaar applet for logitech keyboards
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/pulseaudio.bash")
-awful.util.spawn_with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/pulseaudio.bash")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xscreensaver.bash")
 
 -- starts conky widgets
--- awful.util.spawn_with_shell("sh ~/conky/start-conky.sh &")
+-- awful.spawn.with_shell("sh ~/conky/start-conky.sh &")
 
-awful.util.spawn_with_shell("xscreensaver -no-splash &")
+-- awful.spawn.with_shell("xscreensaver -no-splash &")
 -- }}}
 
 -- {{{ Error handling
@@ -183,7 +184,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+-- mytextclock = awful.widget.textclock()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -500,17 +501,17 @@ globalkeys = awful.util.table.join(
     -- executes script to enable only primary monitor
     awful.key({ modkey, "Shift" }, "Down",
         function ()
-            awful.util.spawn_with_shell("~/.ubuntu/scripts/ext_monitor_disconnect &", false)
+            awful.spawn.with_shell("~/.ubuntu/scripts/ext_monitor_disconnect &", false)
         end),
     -- executes script to enable secondary external monitor (in this case HDMI1)
     awful.key({ modkey, "Shift" }, "Up",
         function ()
-            awful.util.spawn_with_shell("~/.ubuntu/scripts/ext_monitor_connect &", false)
+            awful.spawn.with_shell("~/.ubuntu/scripts/ext_monitor_connect &", false)
         end),
     -- manuallly execute hdmi-hotplug script for screen detection
     awful.key({ modkey, "Shift" }, "Right",
         function ()
-            awful.util.spawn_with_shell("hdmi-hotplug&", false)
+            awful.spawn.with_shell("hdmi-hotplug&", false)
         end)
 
 )

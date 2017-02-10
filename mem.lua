@@ -5,7 +5,7 @@ ramIcon:set_image(beautiful.widget_mem)
 
 ramW = wibox.widget.textbox()
 
-ramWidget = wibox.widget.background()
+ramWidget = wibox.container.background()
 ramWidget:set_widget(ramW)
 ramWidget:set_bg(beautiful.arrow_bg_4)
 

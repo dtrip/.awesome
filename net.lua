@@ -3,7 +3,7 @@ neticon = wibox.widget.imagebox()
 neticon:set_image(beautiful.pa_net)
 
 wifiwidget_txt = wibox.widget.textbox()
-wifiwidgetSSID = wibox.widget.background()
+wifiwidgetSSID = wibox.container.background()
 wifiwidgetSSID:set_widget(wifiwidget_txt)
 wifiwidgetSSID:set_bg(beautiful.arrow_bg_2)
 wifiwidgetSSID:set_fg(beautiful.bg_normal)
