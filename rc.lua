@@ -2,6 +2,7 @@
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+-- blingbling = require("blingbling")
 -- Widget and layout library
 wibox = require("wibox")
 -- Theme handling library
@@ -17,13 +18,13 @@ vicious = require("vicious")
 
 -- obvious = require("obvious")
 
-local hotkeys_popup = require("awful.hotkeys_popup").widget
+-- local hotkeys_popup = require("awful.hotkeys_popup").widget
 
 CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
 
 -- {{{ startup scripts
-awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xcomp.bash &")
--- awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
+-- awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xcomp.bash &")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
 awful.spawn.with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
 
 -- sets network monitor applet in taskbar
@@ -75,7 +76,7 @@ beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
 require("arrows")
 require("calendar")
 require("net")
-require("cpu")
+-- require("cpu")
 require("mem")
 require("bat")
 
@@ -344,8 +345,9 @@ awful.screen.connect_for_each_screen(function(s)
             ramIcon,
             ramWidget,
             arr3,
-            cpuIcon,
-            cpuWidget,
+            -- cpuIcon,
+            -- cpuWidget,
+            -- cpu_box,
             arr2,
             wifiwidgetSSID,
             arr1,
@@ -368,8 +370,8 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
-              {description="show help", group="awesome"}),
+    -- awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+              -- {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
@@ -470,32 +472,32 @@ globalkeys = awful.util.table.join(
     -- Brightness
     awful.key({ modkey, "Shift"      }, "p",
         function ()
-            awful.util.spawn("xbacklight -dec 5") 
+            awful.spawn.with_shell("xbacklight -dec 5") 
         end),
 
     awful.key({ modkey, "Shift"      }, "o",
         function ()
-            awful.util.spawn("xbacklight -inc 5")
+            awful.spawn.with_shell("xbacklight -inc 5")
         end),
 
     awful.key({ modkey, "Control" }, "l",
         function ()
-            awful.util.spawn("xscreensaver-command -lock")
+            awful.spawn.with_shell("xscreensaver-command -lock")
         end),
 
     -- awful.key({ }, "F10", function() toggle_conky() end),
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
-            awful.util.spawn("amixer -c 1 set Master 5%+", false)
+            awful.spawn.with_shell("amixer -c 1 set Master 5%+", false)
         end),
 
     awful.key({ }, "XF86AudioLowerVolume",
         function ()
-            awful.util.spawn("amixer -c 1 set Master 5%-", false)
+            awful.spawn.with_shell("amixer -c 1 set Master 5%-", false)
         end),
     awful.key({ }, "XF86AudioMute",
         function ()
-            awful.util.spawn("amixer -c 1 set Master toggle", false)
+            awful.spawn.with_shell("amixer -c 1 set Master toggle", false)
         end),
 
     -- executes script to enable only primary monitor

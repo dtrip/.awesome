@@ -8,7 +8,7 @@ export QT_PLUGIN_PATH="${HOME}/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/"
 
 # {{{ Resource and keymap settings
 usermodmap="${HOME}/.Xmodmap"
-userresources="${HOME}/.Xresources"
+userresources="~/.Xresources"
 sysmodmap="/etc/X11/xinit/.Xmodmap"
 sysresources="/etc/X11/xinit/.Xresources"
 
@@ -36,7 +36,7 @@ xsetroot -cursor_name left_ptr
 # fi
 # xrandr --output eDP1 --primary --mode 1366x768
 
-xrandr --output eDP1 --auto
+# xrandr --output eDP1 --auto
 
 #disable capslock
 setxkbmap -option caps:none
