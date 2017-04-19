@@ -3,21 +3,24 @@
 # Turn backlight down for what
 xbacklight -set 20%
 
+xrdb -merge ~/.Xresources
+
 # Export KDE styles to QT
 export QT_PLUGIN_PATH="${HOME}/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/"
 
 # {{{ Resource and keymap settings
-usermodmap="${HOME}/.Xmodmap"
-userresources="~/.Xresources"
-sysmodmap="/etc/X11/xinit/.Xmodmap"
-sysresources="/etc/X11/xinit/.Xresources"
+# usermodmap="${HOME}/.Xmodmap"
+# userresources="~/.Xresources"
+# sysmodmap="/etc/X11/xinit/.Xmodmap"
+# sysresources="/etc/X11/xinit/.Xresources"
 
 # Merge system and user resources and keymaps
-[[ -r "${sysresources}" ]]  && xrdb -merge "${sysresources}"
-[[ -r "${sysmodmap}" ]]     && xmodmap "${sysmodmap}"
-[[ -r "${userresources}" ]] && xrdb -merge "${userresources}"
-[[ -r "${usermodmap}" ]]    && xmodmap "${usermodmap}"
+#[[ -r "${sysresources}" ]]  && xrdb -merge "${sysresources}"
+#[[ -r "${sysmodmap}" ]]     && xmodmap "${sysmodmap}"
+# [[ -r "${userresources}" ]] && xrdb -merge "${userresources}"
+# [[ -r "${usermodmap}" ]]    && xmodmap "${usermodmap}"
 # }}}
+
 
 
 # set mouse speed
