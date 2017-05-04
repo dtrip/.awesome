@@ -2,7 +2,6 @@
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
--- blingbling = require("blingbling")
 -- Widget and layout library
 wibox = require("wibox")
 -- Theme handling library
@@ -72,6 +71,8 @@ end
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
 beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
+
+-- local blingbling = require("blingbling")
 
 require("arrows")
 require("calendar")
