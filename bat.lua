@@ -1,29 +1,65 @@
 
-baticon = wibox.widget.imagebox()
-baticon:set_image(beautiful.widget_battery)
+bat_graph = wibox.container.radialprogressbar
+battb = wibox.widget.textbox()
 
 
-local btimer = 0 -- battery timer in seconds
-local binterval = 5 -- interval to check battery
+battb.font = "Panton 10"
+battb.align = "center"
+battb.forced_width = 30
 
+bat_box = wibox.widget {
+    layout = bat_graph,
+    border_width = 2,
+    padding = 0,
+    color = gears.color("#FFFFFF"),
+    border_color = gears.color("#2f343f"),
+    forced_width = 18,
+    max_value = 100,
+    min_vaue = 0,
+}
 
-batwidget = wibox.container.background()
-batwidget_txt = wibox.widget.textbox()
+bat_widget = wibox.widget {
+        layout = wibox.container.margin,
+        top = 0,
+        left = 0,
+        bottom = 0,
+        right = -10,
+        {
+            widget = wibox.container.background,
+            bg = beautiful.arrow_bg_5,
+            fg = beautiful.bg_normal,
+            shape_clip = true,
+            set_shape = function (cr, width, height)
+                gears.shape.powerline(cr, width, height, ((height/2) * -1))
+            end,
+            {
+                layout = wibox.container.margin,
+                top = 1,
+                bottom = 1,
+                left = 20,
+                right = 10,
+                {
+                    bat_box,
+                    {
+                        layout = wibox.container.margin,
+                        top = 8,
+                        battb
+                    },
+                    layout = wibox.layout.fixed.horizontal,
+                    spacing = 4
+                }
+            }
+        }
+}
 
-batwidget:set_widget(batwidget_txt)
+vicious.register(bat_graph, vicious.widgets.bat, function (widget, args)
+    bat_box.value = args[2]
 
-batwidget:set_bg(beautiful.arrow_bg_5)
-batwidget:set_fg(beautiful.fg_normal)
+    if tonumber(args[2]) <= 15 then
+        bat_box.color = gears.color("#FF0000")
+    else
+        bat_box.color = gears.color("#FFFFFF")
+    end
 
-
-vicious.register(batwidget_txt, vicious.widgets.bat, 
-    function (widget, args)
-        -- on AC Power
-        if args[1] == "-" then
-            baticon:set_image(beautiful.widget_ac)
-        -- else on Battery
-        else
-            baticon:set_image(beautiful.widget_battery)
-        end
-        return args[2] .. "%" .. args[1]
-end, binterval, 'BAT1')
+    battb:set_text(args[2] .. "%")
+end,  5, 'BAT1')
