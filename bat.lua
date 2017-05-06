@@ -41,9 +41,13 @@ bat_widget = wibox.widget {
                 {
                     bat_box,
                     {
+                        widget = wibox.container.background,
+                        fg = beautiful.bg_focus,
+                        {
                         layout = wibox.container.margin,
                         top = 8,
                         battb
+                        }
                     },
                     layout = wibox.layout.fixed.horizontal,
                     spacing = 4

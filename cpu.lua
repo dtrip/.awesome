@@ -1,5 +1,5 @@
 
-cpu_icon = wibox.widget{
+local cpu_icon = wibox.widget{
     layout = wibox.container.margin,
     top = 0,
     right = 0,
@@ -13,7 +13,7 @@ cpu_icon = wibox.widget{
     }
 }
 
-cpu_graph = wibox.widget.graph {
+local cpu_graph = wibox.widget.graph {
     height = 20,
     width = 100
 }
@@ -27,7 +27,7 @@ cpuwidget = wibox.widget {
         {
             widget = wibox.container.background,
             bg = beautiful.arrow_bg_3,
-            fg = beautiful.bg_normal,
+            fg = beautiful.bg_focus,
             shape_clip = true,
             set_shape = function (cr, width, height)
                 gears.shape.powerline(cr, width, height, ((height/2) * -1))
@@ -38,7 +38,7 @@ cpuwidget = wibox.widget {
                     min_value = 0,
                     step_width = 1,
                     step_spacing = 0,
-                    color = beautiful.bg_normal,
+                    color = beautiful.bg_focus,
                     background_color = beautiful.arrow_bg_3,
                     widget = cpu_graph
                 },
