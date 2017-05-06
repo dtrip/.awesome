@@ -3,7 +3,7 @@ bat_graph = wibox.container.radialprogressbar
 battb = wibox.widget.textbox()
 
 
-battb.font = "Panton 10"
+battb.font = "Panton 8"
 battb.align = "center"
 battb.forced_width = 30
 
@@ -45,8 +45,9 @@ bat_widget = wibox.widget {
                         fg = beautiful.bg_focus,
                         {
                         layout = wibox.container.margin,
-                        top = 8,
-                        battb
+                        top = 6,
+                        battb,
+                        forced_width = 40
                         }
                     },
                     layout = wibox.layout.fixed.horizontal,
