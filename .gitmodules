@@ -1,9 +1,6 @@
 [submodule "radical"]
 	path = radical
 	url = https://github.com/Elv13/radical.git
-[submodule "blingbling"]
-	path = blingbling
-	url = git://github.com/cedlemo/blingbling.git
 [submodule "awesome-shifty"]
 	path = awesome-shifty
 	url = git://github.com/cdump/awesome-shifty
