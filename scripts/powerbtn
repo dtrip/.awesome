@@ -19,6 +19,7 @@ if [ $(cat $LCD | grep -Ec "^On") -eq 1 ] && [ ! -e $LCK ]; then
     xinput disable "Microsoft Surface Type Cover Keyboard"
     xinput disable "ipts 1B96:006A SingleTouch"
     xinput disable "ipts 1B96:006A Pen"
+    xinput disable "ipts 1B96:006A"
     xinput disable "ipts 1B96:006A Mouse"
 
     touch $LCK
@@ -34,6 +35,7 @@ else
     xinput enable "Microsoft Surface Type Cover Keyboard"
     xinput enable "ipts 1B96:006A SingleTouch"
     xinput enable "ipts 1B96:006A Pen"
+    xinput enable "ipts 1B96:006A"
     xinput enable "ipts 1B96:006A Mouse" 
 
     # removes lock file

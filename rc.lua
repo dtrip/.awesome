@@ -85,7 +85,8 @@ end
 
 -- @DOC_DEFAULT_APPLICATIONS@
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
+-- terminal = "terminator"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -551,7 +552,8 @@ awful.rules.rules = {
 
     -- @DOC_FLOATING_RULE@
     -- Floating clients.
-    { rule_any = {
+    {
+        rule_any = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
@@ -574,7 +576,11 @@ awful.rules.rules = {
           "AlarmWindow",  -- Thunderbird's calendar.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
+    }, properties = { 
+          floating = true,
+          size_hints_honor = false
+      }
+  },
 
     -- @DOC_DIALOG_RULE@
     -- Add titlebars to normal clients and dialogs

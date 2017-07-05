@@ -22,8 +22,13 @@ setxkbmap -option caps:none
 # some java fix
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# if external monitor connected, run hdmi-hotplug script to adjust screens properly
+if [ $(cat $HDMIEV | grep -Ec "^connected") -eq 1 ]; then
+    hdmi-hotplug;
+fi
 # launch the business
 exec awesome
+
 # exec $1
 # exec dwm
 #exec ck-launch-session db-launch awesome
