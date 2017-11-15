@@ -63,6 +63,7 @@ awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash"
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/pulseaudio.bash")
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xscreensaver.bash")
+-- awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xautolock.bash")
 require("arrows")
 require("calendar")
 require("net")
@@ -394,6 +395,15 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+   
+    awful.key({ modkey, "Shift"   }, "Up", function () awful.spawn("xrdb -merge ~/.XresourcesHDMI")  end,
+              {description = "Set DPI when HDMI is connected", group = "awesome"}),
+    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrdb -merge ~/.Xresources")  end,
+              {description = "Set DPI when HDMI is NOT connected", group = "awesome"}),
+    awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("hdmi-hotplug")         end,
+              {description = "Manually trigger HDMI plug", group = "awesome" }),
+    awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
+              {description = "Lock screen", group = "awesome" }),
 
     awful.key({ modkey, "Control" }, "n",
               function ()

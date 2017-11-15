@@ -19,6 +19,9 @@ xsetroot -cursor_name left_ptr
 #disable capslock
 setxkbmap -option caps:none
 
+
+# xset dpms 600 600
+
 # some java fix
 export _JAVA_AWT_WM_NONREPARENTING=1
 
