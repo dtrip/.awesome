@@ -67,4 +67,4 @@ vicious.register(bat_graph, vicious.widgets.bat, function (widget, args)
     end
 
     battb:set_text(args[2] .. "%")
-end,  5, 'BAT1')
+end,  5, 'BAT0')

@@ -14,6 +14,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
 require("awful.hotkeys_popup.keys.vim")
 
+-- require("menus.debian-menu.menu")
 vicious = require("vicious")
 
 CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
@@ -166,9 +167,9 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = {
                                     { "Firefox", "firefox", beautiful.firefox },
-                                    { "Chrome", "chromium-browser", beautiful.www_icon },
+                                    { "Chrome", "google-chrome", beautiful.www_icon },
                                     -- { "Chrome", "chromium", beautiful.www_icon },
-                                    { "Incognito Chrome", "chromium-browser --incognito", beautiful.www_icon },
+                                    { "Incognito Chrome", "google-chrome --incognito", beautiful.www_icon },
                                     -- { "Incognito Chrome", "chromium --incognito", beautiful.www_icon },
                                     { "Burp Suite", "burpsuite", beautiful.burp_icon },
                                     { "Terminal", terminal, beautiful.term_icon },
@@ -396,9 +397,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
    
-    awful.key({ modkey, "Shift"   }, "Up", function () awful.spawn("xrdb -merge ~/.XresourcesHDMI")  end,
+    awful.key({ modkey, "Shift"   }, "Up", function () awful.spawn("xrandr --auto")  end,
               {description = "Set DPI when HDMI is connected", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrdb -merge ~/.Xresources")  end,
+    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrandr --output eDP-1 --off")  end,
               {description = "Set DPI when HDMI is NOT connected", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("hdmi-hotplug")         end,
               {description = "Manually trigger HDMI plug", group = "awesome" }),
