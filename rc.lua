@@ -14,8 +14,8 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
 require("awful.hotkeys_popup.keys.vim")
 
--- require("menus.debian-menu.menu")
 vicious = require("vicious")
+local freedesktop = require("freedesktop")
 
 CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
 
@@ -165,23 +165,39 @@ myawesomemenu = {
 --                         })
 
 
-mymainmenu = awful.menu({ items = {
-                                    { "Firefox", "firefox", beautiful.firefox },
-                                    { "Chrome", "google-chrome", beautiful.www_icon },
-                                    -- { "Chrome", "chromium", beautiful.www_icon },
-                                    { "Incognito Chrome", "google-chrome --incognito", beautiful.www_icon },
-                                    -- { "Incognito Chrome", "chromium --incognito", beautiful.www_icon },
-                                    { "Burp Suite", "burpsuite", beautiful.burp_icon },
-                                    { "Terminal", terminal, beautiful.term_icon },
-                                    { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
-                                    { "Keyboard", "onboard", beautiful.keyboard },
-                                    { "Files", "pcmanfm", beautiful.files },
-                                    -- { "ReCalibrate Touch", "xinput_calibrator", beautiful.touchcali },
-                                    -- { "Terminology", terminology, beautiful.term_icon },
-                                    -- { "Main Menu", debian.menu.Debian_menu.Debian, beautiful.debian },
-                                    { "Awesome", myawesomemenu, beautiful.awesome_lg_icon }
-                                  }
-                        })
+mymainmenu = freedesktop.menu.build({
+    before = {
+        { "Firefox", "firefox", beautiful.firefox },
+        { "Chrome", "google-chrome", beautiful.www_icon },
+        { "Incognito Chrome", "google-chrome --incognito", beautiful.www_icon },
+        { "Burp Suite", "burpsuite", beautiful.burp_icon },
+        { "Terminal", terminal, beautiful.term_icon },
+        { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
+        { "Keyboard", "onboard", beautiful.keyboard },
+        { "Files", "nemo", beautiful.files },
+    },
+    after = {
+        { "Awesome", myawesomemenu, beautiful.awesome_lg_icon }
+    }
+})
+
+-- mymainmenu = awful.menu({ items = {
+--                                     { "Firefox", "firefox", beautiful.firefox },
+--                                     { "Chrome", "google-chrome", beautiful.www_icon },
+--                                     -- { "Chrome", "chromium", beautiful.www_icon },
+--                                     { "Incognito Chrome", "google-chrome --incognito", beautiful.www_icon },
+--                                     -- { "Incognito Chrome", "chromium --incognito", beautiful.www_icon },
+--                                     { "Burp Suite", "burpsuite", beautiful.burp_icon },
+--                                     { "Terminal", terminal, beautiful.term_icon },
+--                                     { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
+--                                     { "Keyboard", "onboard", beautiful.keyboard },
+--                                     { "Files", "nemo", beautiful.files },
+--                                     -- { "ReCalibrate Touch", "xinput_calibrator", beautiful.touchcali },
+--                                     -- { "Terminology", terminology, beautiful.term_icon },
+--                                     -- { "Main Menu", debian.menu.Debian_menu.Debian, beautiful.debian },
+--                                     { "Awesome", myawesomemenu, beautiful.awesome_lg_icon }
+--                                   }
+--                         })
 
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
@@ -405,6 +421,9 @@ globalkeys = gears.table.join(
               {description = "Manually trigger HDMI plug", group = "awesome" }),
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
               {description = "Lock screen", group = "awesome" }),
+              
+    -- awful.key({ modkey }, "o", function () osk('bottom', 1) end,
+            -- { description = "Onscreen keyboard", group = "awesome"}),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
@@ -561,6 +580,18 @@ awful.rules.rules = {
      }
     },
 
+    {
+        rule = { class = "onboard"  }, {
+            properties = {
+                ontop = true,
+                type = "desktop",
+                above = true,
+                sticky = true,
+                focus = awful.client.focus.filter
+            }
+        }
+    },
+
     -- @DOC_FLOATING_RULE@
     -- Floating clients.
     {
@@ -610,6 +641,9 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "1" } },
     { rule = { class = "Chromium-browser" },
       properties = { screen = 1, tag = "1" } },
+    { rule = { class = "google-chrome" },
+      properties = { screen = 1, tag = "1" } },
+
 
     -- rules for any client
     { rule_any = { class = { 'pcmanfm', 'Pcmanfm' } },
@@ -677,7 +711,7 @@ client.connect_signal("request::titlebars", function(c)
             layout = wibox.layout.fixed.horizontal()
         },
         layout = wibox.layout.align.horizontal
-    }
+            }
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
@@ -692,3 +726,30 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+client.connect_signal("lowered", function (c) 
+    if awful.rules.match(c, { name = "Onboard"}) then
+        local is_valid = pcall(function() return c.valid end) and c.valid
+        if is_valid then
+            c:raise()
+        end
+    end
+end)
+
+client.connect_signal("unfocus", function (c) 
+    if awful.rules.match(c, { name = "Onboard"}) then
+        local is_valid = pcall(function() return c.valid end) and c.valid
+        if is_valid then
+        -- naughty.notify({text = "onboard lost focus, on top"})
+            c.ontop = true
+        end
+    end
+end)
+
+
+client.connect_signal("focus", function (c) 
+    -- naughty.notify({text=c.name})
+    if awful.rules.match(c, {name = "Onboard"}) then
+        awful.client.focus.history.previous()
+    end
+end)

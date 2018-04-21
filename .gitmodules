@@ -13,3 +13,6 @@
 [submodule "vicious"]
 	path = vicious
 	url = https://github.com/Mic92/vicious.git
+[submodule "awesome-freedesktop"]
+	path = freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop.git
