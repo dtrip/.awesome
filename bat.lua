@@ -18,6 +18,12 @@ bat_box = wibox.widget {
     min_vaue = 0,
 }
 
+
+bat_icon = wibox.widget.textbox()
+bat_icon.font = "Panton 7"
+-- bat_icon.forced_width = 20
+bat_icon.text = ""
+
 bat_widget = wibox.widget {
         layout = wibox.container.margin,
         top = 0,
@@ -39,7 +45,22 @@ bat_widget = wibox.widget {
                 left = 20,
                 right = 10,
                 {
-                    bat_box,
+                    {
+                        {
+                            layout = wibox.container.background,
+                            fg = beautiful.bg_focus,
+                            {
+                                layout = wibox.container.margin,
+                                top = -1,
+                                left = 6,
+                                bottom = 1,
+                                right = 0,
+                                bat_icon
+                            }
+                        },
+                        bat_box,
+                        layout = wibox.layout.stack
+                    },
                     {
                         widget = wibox.container.background,
                         fg = beautiful.bg_focus,
@@ -58,6 +79,15 @@ bat_widget = wibox.widget {
 }
 
 vicious.register(bat_graph, vicious.widgets.bat, function (widget, args)
+
+    local bicon = {
+        ["↯"] = "", -- full
+        ["⌁"] = "", -- unknown
+        ["↯"] = "ﯓ", -- charged
+        ["+"] = "ﰃ", -- charging
+        ["-"] = "", -- discharging
+    }
+
     bat_box.value = args[2]
 
     if tonumber(args[2]) <= 15 then
@@ -67,4 +97,5 @@ vicious.register(bat_graph, vicious.widgets.bat, function (widget, args)
     end
 
     battb:set_text(args[2] .. "%")
-end,  5, 'BAT0')
+    bat_icon:set_text(bicon[args[1]])
+end,  10, 'BAT0')

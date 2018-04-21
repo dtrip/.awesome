@@ -646,7 +646,7 @@ awful.rules.rules = {
 
 
     -- rules for any client
-    { rule_any = { class = { 'pcmanfm', 'Pcmanfm' } },
+    { rule_any = { class = { 'pcmanfm', 'Pcmanfm', 'nemo' } },
       properties = { screen = 1, tag = "5" } },
     { rule_any = { class = { "sun-awt-X11-XDialogPeer", "sun-awt-X11-XFramePeer", "burp-StartBurp"} },
       properties = { screen = 1, tag = "2" } },
