@@ -69,6 +69,7 @@ require("arrows")
 require("calendar")
 require("net")
 require("cpu")
+require("volume")
 require("mem")
 require("bat")
 
@@ -168,8 +169,8 @@ myawesomemenu = {
 mymainmenu = freedesktop.menu.build({
     before = {
         { "Firefox", "firefox", beautiful.firefox },
-        { "Chrome", "google-chrome", beautiful.www_icon },
-        { "Incognito Chrome", "google-chrome --incognito", beautiful.www_icon },
+        { "Chrome", "google-chrome-stable", beautiful.www_icon },
+        { "Incognito Chrome", "google-chrome-stable --incognito", beautiful.www_icon },
         { "Burp Suite", "burpsuite", beautiful.burp_icon },
         { "Terminal", terminal, beautiful.term_icon },
         { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
@@ -319,6 +320,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+            -- volwidget,
             bat_widget,
             ram_widget,
 			cpuwidget,
@@ -421,7 +423,14 @@ globalkeys = gears.table.join(
               {description = "Manually trigger HDMI plug", group = "awesome" }),
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
               {description = "Lock screen", group = "awesome" }),
+    
+    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 5") end, 
+              { description = "Decrease screen brightness", group = 'awesome' }),
+
+    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 5") end, 
+              { description = "Increase screen brightness", group = 'awesome' }),
               
+
     -- awful.key({ modkey }, "o", function () osk('bottom', 1) end,
             -- { description = "Onscreen keyboard", group = "awesome"}),
 
