@@ -70,6 +70,7 @@ require("calendar")
 require("net")
 require("cpu")
 require("volume")
+require("volpop")
 require("mem")
 require("bat")
 
@@ -423,12 +424,28 @@ globalkeys = gears.table.join(
               {description = "Manually trigger HDMI plug", group = "awesome" }),
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
               {description = "Lock screen", group = "awesome" }),
-    
-    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 5") end, 
-              { description = "Decrease screen brightness", group = 'awesome' }),
+        
+    awful.key({}, "XF86AudioRaiseVolume", function ()
+        awful.spawn("amixer set Master 5%+")
+        -- self.emit_signal("volume::adjust")
+        volume_popup.visible = true
 
-    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 5") end, 
-              { description = "Increase screen brightness", group = 'awesome' }),
+        naughty.notify({title='volume', text = "louder"})
+    end, { description = "Increase volume", group = "awesome" }),
+    
+    awful.key({}, "XF86AudioLowerVolume", function ()
+        awful.spawn("amixer set Master 5%-")
+        awesome.emit_signal("volume::adjust")
+    end, { description = "Lower volume", group = "awesome" }),
+    
+    awful.key({}, "XF86AudioMute", function ()
+        -- awful.spawn("amixer set Master toggle")
+        awful.spawn("amixer set Speaker toggle")
+        awesome.emit_signal("volume::adjust")
+    end, { description = "[Un]mute volume", group = "awesome" }),
+
+    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 5") end, { description = "Decrease screen brightness", group = 'awesome' }),
+    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 5") end, { description = "Increase screen brightness", group = 'awesome' }),
               
 
     -- awful.key({ modkey }, "o", function () osk('bottom', 1) end,
