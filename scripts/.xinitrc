@@ -31,6 +31,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 if [ $(cat $HDMIEV | grep -Ec "^connected") -eq 1 ]; then
     hdmi-hotplug;
 fi
+
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 # launch the business
 exec awesome
 
