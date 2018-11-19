@@ -28,9 +28,9 @@ setxkbmap -option caps:none
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # if external monitor connected, run hdmi-hotplug script to adjust screens properly
-if [ $(cat $HDMIEV | grep -Ec "^connected") -eq 1 ]; then
-    hdmi-hotplug;
-fi
+# if [ $(cat $HDMIEV | grep -Ec "^connected") -eq 1 ]; then
+    # hdmi-hotplug;
+# fi
 
 dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

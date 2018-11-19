@@ -61,7 +61,7 @@ awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &")
 -- used to start solaar applet for logitech keyboards
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/solaar.bash &")
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/indicator-sound.bash")
-awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/pulseaudio.bash")
+-- awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/pulseaudio.bash")
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/blueman-applet.bash")
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xscreensaver.bash")
 -- awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/xautolock.bash")
@@ -155,7 +155,7 @@ myawesomemenu = {
    { "Reload Awesome", awesome.restart },
    { "Log Out", awesome.quit },
    { "", nil },
-   { "Restart Computer", "shutdown -r now" },
+   { "Restart Computer", "reboot" },
    { "Shutdown Computer", "shutdown -h now" }
 }
 
@@ -446,6 +446,10 @@ globalkeys = gears.table.join(
 
     awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 5") end, { description = "Decrease screen brightness", group = 'awesome' }),
     awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 5") end, { description = "Increase screen brightness", group = 'awesome' }),
+    
+
+    -- awful.key({ modkey, "Shift", "Alt_R"}, "1", function () awful.spawn("cvlc rtsp://rtsp:kornman1@10.0.10.15:554/ch01/0") end,
+        -- { description = "Shows camera 1", group = "Cameras"}),
               
 
     -- awful.key({ modkey }, "o", function () osk('bottom', 1) end,
