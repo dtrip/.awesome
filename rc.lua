@@ -418,10 +418,10 @@ globalkeys = gears.table.join(
    
     awful.key({ modkey, "Shift"   }, "Up", function () awful.spawn("xrandr --auto")  end,
               {description = "Set DPI when HDMI is connected", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrandr --output eDP-1 --off")  end,
+    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrandr --output eDP1 --off")  end,
               {description = "Set DPI when HDMI is NOT connected", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("hdmi-hotplug")         end,
-              {description = "Manually trigger HDMI plug", group = "awesome" }),
+    awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("xrandr --output HDMI1 --same-as eDP1")         end,
+              {description = "SET HDMI 1 same as eDP1", group = "awesome" }),
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
               {description = "Lock screen", group = "awesome" }),
         

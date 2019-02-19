@@ -90,11 +90,20 @@ vicious.register(bat_graph, vicious.widgets.bat, function (widget, args)
 
     bat_box.value = args[2]
 
-    if tonumber(args[2]) <= 15 then
-        bat_box.color = gears.color("#FF0000")
-    else
-        bat_box.color = gears.color("#FFFFFF")
+    if args[1] == "↯" then -- chargd or full
+            bat_box.color = gears.color("#39af28")
+    elseif args[1] == "+" then  -- charging
+            bat_box.color = gears.color("#9fa6ff")
+    elseif args[1] == "-" then -- discharging
+        if tonumber(args[2]) <= 15 then
+            bat_box.color = gears.color("#FF0000")
+        else
+            bat_box.color = gears.color("#FFFFFF")
+        end
+    else -- unknown state
+            bat_box.color = gears.color("#f2ea05")
     end
+
 
     battb:set_text(args[2] .. "%")
     bat_icon:set_text(bicon[args[1]])

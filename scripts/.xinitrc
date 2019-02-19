@@ -13,7 +13,7 @@ export QT_PLUGIN_PATH="${HOME}/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/"
 xset m 50/10 4
 
 # enable cursor theme should there be one
-xsetroot -cursor_name left_ptr
+#xsetroot -cursor_name left_ptr
 
 
 xmodmap -e 'keycode 150='
@@ -41,4 +41,4 @@ exec awesome
 
 # exec $1
 # exec dwm
-#exec ck-launch-session db-launch awesome
+# exec ck-launch-session db-launch awesome
