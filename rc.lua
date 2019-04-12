@@ -169,9 +169,9 @@ myawesomemenu = {
 
 mymainmenu = freedesktop.menu.build({
     before = {
-        { "Firefox", "firefox", beautiful.firefox },
         { "Chrome", "google-chrome-stable", beautiful.www_icon },
         { "Incognito Chrome", "google-chrome-stable --incognito", beautiful.www_icon },
+        { "Firefox", "firefox", beautiful.firefox },
         { "Burp Suite", "burpsuite", beautiful.burp_icon },
         { "Terminal", terminal, beautiful.term_icon },
         { "SQLiteStudio", "sqlitestudio", beautiful.sqlite_icon },
