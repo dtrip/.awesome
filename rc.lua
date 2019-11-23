@@ -418,9 +418,9 @@ globalkeys = gears.table.join(
    
     awful.key({ modkey, "Shift"   }, "Up", function () awful.spawn("xrandr --auto")  end,
               {description = "Set DPI when HDMI is connected", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrandr --output eDP1 --off")  end,
+    awful.key({ modkey, "Shift"   }, "Down", function () awful.spawn("xrandr --output eDP-1 --off")  end,
               {description = "Set DPI when HDMI is NOT connected", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("xrandr --output HDMI1 --same-as eDP1")         end,
+    awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("xrandr --output HDMI-1 --mode 2540x1460 --rate 60")         end,
               {description = "SET HDMI 1 same as eDP1", group = "awesome" }),
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
               {description = "Lock screen", group = "awesome" }),
@@ -783,3 +783,9 @@ client.connect_signal("focus", function (c)
         awful.client.focus.history.previous()
     end
 end)
+
+
+-- round borders
+-- client.connect_signal("manage", function (c)
+--     c.shape = gears.shape.rounded_rect
+-- end)
