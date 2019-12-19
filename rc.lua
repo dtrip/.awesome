@@ -422,7 +422,7 @@ globalkeys = gears.table.join(
               {description = "Set DPI when HDMI is NOT connected", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "Right", function () awful.spawn("xrandr --output HDMI-1 --mode 2540x1460 --rate 60")         end,
               {description = "SET HDMI 1 same as eDP1", group = "awesome" }),
-    awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver --lock")      end,
+    awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("xscreensaver-command --lock")      end,
               {description = "Lock screen", group = "awesome" }),
         
     awful.key({}, "XF86AudioRaiseVolume", function ()

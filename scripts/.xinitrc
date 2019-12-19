@@ -16,10 +16,10 @@ xset m 50/10 4
 #xsetroot -cursor_name left_ptr
 
 
-xmodmap -e 'keycode 150='
+# xmodmap -e 'keycode 150='
 
 #disable capslock
-setxkbmap -option caps:none
+# setxkbmap -option caps:none
 
 
 # xset dpms 600 600
