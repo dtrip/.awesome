@@ -72,6 +72,7 @@ require("cpu")
 require("volume")
 require("volpop")
 require("mem")
+require("therm")
 require("bat")
 
 for _, wdg in ipairs {
@@ -323,6 +324,7 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             -- volwidget,
             bat_widget,
+            therm_widget,
             ram_widget,
 			cpuwidget,
             wifiwidgetSSID,

@@ -32,7 +32,7 @@ bat_widget = wibox.widget {
         right = -10,
         {
             widget = wibox.container.background,
-            bg = beautiful.arrow_bg_5,
+            bg = beautiful.arrow_bg_6,
             fg = beautiful.bg_normal,
             shape_clip = true,
             set_shape = function (cr, width, height)
