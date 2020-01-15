@@ -12,7 +12,7 @@ wifiwidgetSSID = wibox.widget {
     {
         widget = wibox.container.background,
         bg = beautiful.arrow_bg_2,
-        fg = beautiful.bg_normal,
+        fg = beautiful.fg_dark,
         set_shape = function (cr, width, height)
             gears.shape.powerline(cr, width, height, ((height/2) * -1))
         end,
@@ -28,4 +28,4 @@ wifiwidgetSSID = wibox.widget {
 }
 
 
-vicious.register(wifiwidget_txt, vicious.widgets.wifi, "  ${ssid} ${linp}% ", 3, 'wlo1')
+vicious.register(wifiwidget_txt, vicious.widgets.wifi, "  ${ssid} ${linp}% ", 3, 'wlp1s0')

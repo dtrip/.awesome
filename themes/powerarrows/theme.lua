@@ -68,7 +68,10 @@ theme.font                          = "Panton light 11"
 theme.fg_normal                     = "#e8e8e8"
 theme.fg_focus                      = "#F0DFAF"
 theme.fg_urgent                     = "#CC9393"
-theme.bg_normal                     = "#2f343f" -- main top title bar BG color
+theme.bg_normal                     = "#2f343f00" -- main top title bar BG color
+theme.fg_dark                       = "#2f343f"
+
+
 -- theme.bg_focus                      = "#5a98c8" -- right click menu bg for selected item
 theme.bg_focus                      = "#FFFFFF" -- right click menu bg for selected item
 theme.bg_urgent                     = "#2f343f"
@@ -80,9 +83,11 @@ theme.titlebar_bg_focus             = "#FFFFFF"
 theme.titlebar_bg_normal            = "#FFFFFF"
 
 
-theme.taglist_bg_occupied           = "#d7ff80"
+theme.taglist_bg_occupied           = "#d7ff8096"
+-- theme.taglist_shape                 = gears.shape.parallelogram
+-- theme.taglist_spacing               = 0
 theme.taglist_fg_occupied           = "#1a1a1a"
-theme.taglist_bg_focus              = "#b5d66c"
+theme.taglist_bg_focus              = "#b5d66ci"
 theme.taglist_fg_focus              = "#1a1a1a"
 
 theme.taglist_bg_empty              = "#d7ff80"
@@ -90,10 +95,10 @@ theme.taglist_fg_empty              = "#ccf27a"
 theme.taglist_bg_selected           = "#c2e673"
 -- theme.taglist_
 
-theme.tasklist_bg_normal            = "#2f343f" -- other apps on same screen
-theme.tasklist_fg_normal            = "#434a59"
-theme.tasklist_bg_focus             = "#2f343f" -- Currently using app
-theme.tasklist_fg_focus             = "#b1b1b1"
+theme.tasklist_bg_normal            = "#46464668" -- other apps on same screen
+theme.tasklist_fg_normal            = "#e4d482"
+theme.tasklist_bg_focus             = "#d4ed4c35" -- Currently using app
+theme.tasklist_fg_focus             = "#ffffff"
 
 theme.textbox_widget_margin_top     = 15
 theme.notify_fg                     = theme.fg_normal
