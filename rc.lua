@@ -52,7 +52,7 @@ end
 beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
+awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/picom.bash &")
 -- awful.spawn.with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
 
 -- sets network monitor applet in taskbar
