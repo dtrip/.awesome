@@ -37,7 +37,7 @@ therm_widget = wibox.widget {
         {
             {
                 max_value = 100,
-                min_value = 20,
+                min_value = 30,
                 step_width = 1,
                 step_spacing = 0,
                 color = beautiful.bg_focus,
@@ -65,4 +65,4 @@ vicious.register(therm_graph, vicious.widgets.thermal, function(widget, args)
     -- therm_graph.color(gears.color("#" .. rgbToHex(barColor)))
     -- therm_graph.color(gears.color('#' .. rgbToHex(barColor)))
     therm_graph:add_value(math.floor(args[1]))
-end, 1, {"thermal_zone7", "sys"})
+end, 1, {"thermal_zone0", "sys"})

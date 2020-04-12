@@ -53,7 +53,7 @@ beautiful.init(CONFIG_PATH .. "/themes/powerarrows/theme.lua")
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/compton.bash &")
-awful.spawn.with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
+-- awful.spawn.with_shell("xmodmap " .. CONFIG_PATH .. "/scripts/.Xmodmap &")
 
 -- sets network monitor applet in taskbar
 awful.spawn.with_shell("bash " .. CONFIG_PATH .. "/scripts/nm-applet.bash &")
@@ -589,21 +589,16 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
-    { rule = { class = "Gimp" },
-      properties = { screen = 1, tag = "4" } },
-    { rule = { class = "sqlitestudio" },
-      properties = { screen = 1, tag = "3" } },
-    { rule = { class = "Firefox" },
-      properties = { screen = 1, tag = "1" } },
-    { rule = { class = "Chromium-browser" },
-      properties = { screen = 1, tag = "1" } },
-    { rule = { class = "google-chrome" },
-      properties = { screen = 1, tag = "1" } },
-
-
+    --
     -- rules for any client
-    { rule_any = { class = { 'pcmanfm', 'Pcmanfm', 'nemo' } },
-      properties = { screen = 1, tag = "5" } },
+    { rule = { class = "Blender" },             properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Gimp" },                properties = { screen = 1, tag = "4" } },
+    { rule = { class = "sqlitestudio" },        properties = { screen = 1, tag = "3" } },
+    { rule = { class = "Firefox" },             properties = { screen = 1, tag = "1" } },
+    { rule = { class = "Chromium-browser" },    properties = { screen = 1, tag = "1" } },
+    { rule = { class = "google-chrome" },       properties = { screen = 1, tag = "1" } },
+    { rule = { class = "nemo" },                properties = { screen = 1, tag = "5" } },
+
     { rule_any = { class = { "sun-awt-X11-XDialogPeer", "sun-awt-X11-XFramePeer", "burp-StartBurp"} },
       properties = { screen = 1, tag = "2" } },
 

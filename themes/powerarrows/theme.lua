@@ -68,7 +68,7 @@ theme.font                          = "Panton light 11"
 theme.fg_normal                     = "#e8e8e8"
 theme.fg_focus                      = "#F0DFAF"
 theme.fg_urgent                     = "#CC9393"
-theme.bg_normal                     = "#2f343f00" -- main top title bar BG color
+theme.bg_normal                     = "#2f343f96" -- main top title bar BG color
 theme.fg_dark                       = "#2f343f"
 
 
