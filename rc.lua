@@ -19,6 +19,9 @@ local freedesktop = require("freedesktop")
 
 CONFIG_PATH = os.getenv("HOME") .. "/.config/awesome"
 
+
+naughty.config.defaults['icon_size'] = 64
+
 -- {{{ Error handling
 -- @DOC_ERROR_HANDLING@
 -- Check if awesome encountered an error during startup and fell back to

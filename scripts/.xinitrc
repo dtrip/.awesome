@@ -1,5 +1,7 @@
 #!/bin/bash
 
+xrandr --auto
+
 # Turn backlight down for what
 xbacklight -set 20%
 
