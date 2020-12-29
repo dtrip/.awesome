@@ -28,4 +28,4 @@ wifiwidgetSSID = wibox.widget {
 }
 
 
-vicious.register(wifiwidget_txt, vicious.widgets.wifi, "  ${ssid} ${linp}% ", 3, 'wlo1')
+vicious.register(wifiwidget_txt, vicious.widgets.wifi, "  ${ssid} ${linp}% ", 3, 'wlp2s0')
