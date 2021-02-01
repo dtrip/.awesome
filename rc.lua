@@ -76,7 +76,7 @@ require("volume")
 require("volpop")
 require("mem")
 require("therm")
-require("bat")
+-- require("bat")
 
 local taglist_widget = require("taglist")
 local tasks = require("tasklist")
@@ -289,7 +289,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             -- volwidget,
-            bat_widget,
+            -- bat_widget,
             therm_widget,
             ram_widget,
 			cpuwidget,
