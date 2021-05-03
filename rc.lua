@@ -10,6 +10,7 @@ beautiful = require("beautiful")
 -- Notification library
 naughty = require("naughty")
 local menubar = require("menubar")
+local xrandr = require("xrandr")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
 require("awful.hotkeys_popup.keys.vim")
@@ -330,6 +331,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "u", awful.client.urgent.jumpto, {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey, }, "Tab", function () awful.client.focus.byidx(1) if client.focus then client.focus:raise() end end, {description = "go back", group = "client"}),
 
+    awful.key({ modkey, },  "g", function() xrandr.xrandr() end),
     -- Standard program
     awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end, {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "reload awesome", group = "awesome"}),
